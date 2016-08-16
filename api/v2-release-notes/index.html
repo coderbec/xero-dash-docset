@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]><html class="ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/favicon.ico?m=15032016" type="image/x-icon">
+	
+<!-- This site is optimized with the Yoast SEO plugin v3.2.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Core API Release Notes - Xero Developer</title>
+<meta name="description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://developer.xero.com/documentation/api/v2-release-notes/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Core API Release Notes - Xero Developer" />
+<meta property="og:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero." />
+<meta property="og:url" content="https://developer.xero.com/documentation/api/v2-release-notes/" />
+<meta property="og:site_name" content="Xero API Developer Center" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero." />
+<meta name="twitter:title" content="Core API Release Notes - Xero Developer" />
+<meta name="twitter:site" content="@xeroAPI" />
+<meta name="twitter:creator" content="@xeroAPI" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Feed" href="https://developer.xero.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Comments Feed" href="https://developer.xero.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/developer.xero.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='black-nav-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/css/black-nav.css' type='text/css' media='all' />
+<link rel='stylesheet' id='minqueue-80a2dc04-54ce0cfd-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-80a2dc04-54ce0cfd.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-2ac824e9-f95de822.js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/lib/html5shiv.js'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='https://developer.xero.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.xero.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://developer.xero.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://developer.xero.com/?p=6866' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fdocumentation%2Fapi%2Fv2-release-notes%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fdocumentation%2Fapi%2Fv2-release-notes%2F&#038;format=xml" />
+<style>.ssbl-wrap .ssbl-container .ssbl-img{width:50px;height:50px;padding:5px;border:0;box-shadow:0;display:inline}.ssbl-wrap .ssbl-container a{border:0}</style><link rel='stylesheet' id='minqueue-a0b326f9-4f2caace-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-a0b326f9-4f2caace.css' type='text/css' media='all' />
+<style type="text/css">            ul.dwls_search_results {
+              width: 250px;
+            }
+            ul.dwls_search_results li {
+              color: #797979;
+              background-color: #ffffff;
+            }
+            .search_footer {
+              background-color: #f5f7f8;
+            }
+            .search_footer a,
+            .search_footer a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li a, ul.dwls_search_results li a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li:hover
+            {
+              background-color: ;
+            }
+            ul.dwls_search_results li {
+              border-bottom: 1px solid #e0e5e9;
+            }</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+
+	<link rel="stylesheet" href="https://edge.xero.com/style/xui/10.0.0/xui.min.css" />
+
+</head>
+<body class="xui-body">
+
+      <div class="Notification js-notification">
+      <div class="b-container">
+        <div class="b-row">
+          <div class="span12">
+            <p id="x1237" class="xxxjs-notificationContent">Developer TV Episode 3 is out. Watch it <a href="https://www.youtube.com/watch?v=vpPWKwwyvkc" target="_blank" class="js-notificationAcknowledge">here!</a></p>
+            <button class="Notification-closeButton js-notificationCloseButton" type="button">
+              <span class="Notification-closeButtonText is-hidden">Close</span>
+              <svg class="Notification-closeButtonIcon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15zm-1.765-15L7.5 9.265 9.265 7.5 15 13.235 20.735 7.5 22.5 9.265 16.765 15l5.735 5.735-1.765 1.765L15 16.765 9.265 22.5 7.5 20.735 13.235 15z" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+    <!-- rev 29a7f4b -->
+    <div id="devx-nav">
+
+        <div class="devx-logo">
+            <a href="/">
+                <img src="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/developer-logo.svg" alt="Xero Developer"
+                    width="115" height="30" class="dev-logo" />
+            </a>
+        </div>
+        <div class="devx-nav-tabs-left">
+            <ul>
+                <li class="devx-nav-block">
+                    <a href="/documentation/" id="devx-page-docs"
+                        class="devx-nav-item devx-nav-link devx-nav-selected">Docs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="/code-samples/" id="devx-page-sdks"
+                        class="devx-nav-item devx-nav-link ">SDKs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Preview/Organisation" id="devx-page-previewer"
+                        class="devx-nav-item devx-nav-link">Previewer</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Application" id="devx-page-myapps"
+                        class="devx-nav-item devx-nav-link">My Apps</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://community.xero.com/developer/" id="devx-page-community"
+                        class="devx-nav-item devx-nav-link">Community</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="/partner/" id="devx-page-partner"
+                        class="devx-nav-item devx-nav-link ">Partner</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://devblog.xero.com/" id="devx-page-blog"
+                        class="devx-nav-item devx-nav-link ">Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="devx-nav-tabs-right">
+            <ul>
+                <li class="devx-nav-block" style="margin-right: 46px;">
+                    <a class="devx-nav-item devx-nav-help" id="devx-nav-help-icon"></a>
+
+                    <div class="xui-dropdownmenu xui-dropdownmenu xui-dropdownmenu-layout xui-dropdownmenu-right" role="menubar" aria-label="dropdown menu">
+                        <div class="xui-dropdownmenu--body">
+                            <ul class="xui-menugroup xui-menugroup-layout" role="menu" aria-label="Menu group 1 label">
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="/faq/" id="dex-page-faqs"
+                                        class="xui-menuitem--body">FAQs
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="true">
+                                    <a href="/support/" id="dex-page-support"
+                                        class="xui-menuitem--body">Support
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="https://status.developer.xero.com/" id="dex-page-apistatus"
+                                        class="xui-menuitem--body">API Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="xui-input-wrapper">
+                        <svg class="xui-icon xui-input--icon-left" ><use xlink:href="#xui-icon-search" /></svg>
+                        <input class="xui-input devx-nav-search" type="search" placeholder="Search" aria-label="Search" id="devx-top-search" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="xui-icon-blob-holder"></div>
+    <script src="https://edge.xero.com/style/xui-icon/2.3.0/xuiIconBlobES5.js"></script>
+    <script type="text/javascript">
+        (function () { xuiIconBlobES5(document.getElementById('xui-icon-blob-holder')); })();
+    </script>
+
+	<div class="underHeader">
+		<div class="b-container">
+			<div class="b-row">
+				<div class="span12">
+					<div class="titleUnderHeader">
+						<h1>Documentation</h1>					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="pageWrapper">
+  <div class="b-container">
+	  <div class="b-row">
+			<div class="span3">
+				<div class="leftSideBar">
+	<ul class="pagesList">
+	<li class="page_item page-item-1600 page_item_has_children"><a href="https://developer.xero.com/documentation/getting-started/">Getting Started</a>
+<ul class='children'>
+	<li class="page_item page-item-35556"><a href="https://developer.xero.com/documentation/getting-started/getting-started-guide/">Getting Started Guide</a></li>
+	<li class="page_item page-item-35823"><a href="https://developer.xero.com/documentation/getting-started/development-accounts/">Development accounts</a></li>
+	<li class="page_item page-item-26860"><a href="https://developer.xero.com/documentation/getting-started/api-application-types/">API Application Types</a></li>
+	<li class="page_item page-item-35725"><a href="https://developer.xero.com/documentation/getting-started/api-application-setup/">API Application Setup</a></li>
+	<li class="page_item page-item-33328"><a href="https://developer.xero.com/documentation/getting-started/private-applications/">Private Applications</a></li>
+	<li class="page_item page-item-33264"><a href="https://developer.xero.com/documentation/getting-started/public-applications/">Public Applications</a></li>
+	<li class="page_item page-item-33294"><a href="https://developer.xero.com/documentation/getting-started/partner-applications/">Partner Applications</a></li>
+	<li class="page_item page-item-33734"><a href="https://developer.xero.com/documentation/getting-started/http-requests-and-responses/">Requests and Responses</a></li>
+	<li class="page_item page-item-7917"><a href="https://developer.xero.com/documentation/getting-started/http-response-codes/">Response Codes</a></li>
+	<li class="page_item page-item-24421"><a href="https://developer.xero.com/documentation/getting-started/xero-api-limits/">API Limits</a></li>
+	<li class="page_item page-item-23070"><a href="https://developer.xero.com/documentation/getting-started/oauth-issues/">OAuth Issues</a></li>
+	<li class="page_item page-item-20611"><a href="https://developer.xero.com/documentation/getting-started/connect-to-xero-buttons/">Xero Connect Buttons</a></li>
+</ul>
+</li>
+<li class="page_item page-item-35553 page_item_has_children"><a href="https://developer.xero.com/documentation/advanced-docs/">Advanced Docs</a>
+<ul class='children'>
+	<li class="page_item page-item-21135"><a href="https://developer.xero.com/documentation/advanced-docs/oauth-callback-domains-explained/">Callback Domains</a></li>
+	<li class="page_item page-item-34452"><a href="https://developer.xero.com/documentation/advanced-docs/dates-and-timestamps-explained/">Dates and Timestamps</a></li>
+	<li class="page_item page-item-36255"><a href="https://developer.xero.com/documentation/advanced-docs/deep-links/">Deep links</a></li>
+	<li class="page_item page-item-36177"><a href="https://developer.xero.com/documentation/advanced-docs/partner-app-entrust-certificate-instructions/">Entrust Certificates</a></li>
+	<li class="page_item page-item-33689"><a href="https://developer.xero.com/documentation/advanced-docs/using-partner-applications-with-iis/">Partner Applications &#038; IIS</a></li>
+	<li class="page_item page-item-30024"><a href="https://developer.xero.com/documentation/advanced-docs/rounding-in-xero/">Rounding in Xero</a></li>
+	<li class="page_item page-item-33420"><a href="https://developer.xero.com/documentation/advanced-docs/public-private-keypair/">Public/private key pair</a></li>
+</ul>
+</li>
+<li class="page_item page-item-1603 page_item_has_children current_page_ancestor current_page_parent"><a href="https://developer.xero.com/documentation/api/">Accounting API</a>
+<ul class='children'>
+	<li class="page_item page-item-1608"><a href="https://developer.xero.com/documentation/api/api-overview/">Overview &#8211; Core</a></li>
+	<li class="page_item page-item-6866 current_page_item"><a href="https://developer.xero.com/documentation/api/v2-release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-23587"><a href="https://developer.xero.com/documentation/api/attachments/">Attachments</a></li>
+	<li class="page_item page-item-6708"><a href="https://developer.xero.com/documentation/api/accounts/">Accounts</a></li>
+	<li class="page_item page-item-27441"><a href="https://developer.xero.com/documentation/api/bankstatements/">Bank Statements</a></li>
+	<li class="page_item page-item-19124"><a href="https://developer.xero.com/documentation/api/banktransactions/">Bank Transactions</a></li>
+	<li class="page_item page-item-35866"><a href="https://developer.xero.com/documentation/api/bank-transfers/">Bank Transfers</a></li>
+	<li class="page_item page-item-15407"><a href="https://developer.xero.com/documentation/api/branding-themes/">Branding Themes</a></li>
+	<li class="page_item page-item-6712"><a href="https://developer.xero.com/documentation/api/contacts/">Contacts</a></li>
+	<li class="page_item page-item-36095"><a href="https://developer.xero.com/documentation/api/contactgroups/">Contact Groups</a></li>
+	<li class="page_item page-item-6715"><a href="https://developer.xero.com/documentation/api/credit-notes/">Credit Notes</a></li>
+	<li class="page_item page-item-6720"><a href="https://developer.xero.com/documentation/api/currencies/">Currencies</a></li>
+	<li class="page_item page-item-17711"><a href="https://developer.xero.com/documentation/api/employees/">Employees</a></li>
+	<li class="page_item page-item-21227"><a href="https://developer.xero.com/documentation/api/expense-claims/">Expense Claims</a></li>
+	<li class="page_item page-item-6723"><a href="https://developer.xero.com/documentation/api/invoices/">Invoices</a></li>
+	<li class="page_item page-item-36602"><a href="https://developer.xero.com/documentation/api/invoice-reminders/">Invoice Reminders</a></li>
+	<li class="page_item page-item-15834"><a href="https://developer.xero.com/documentation/api/items/">Items</a></li>
+	<li class="page_item page-item-15418"><a href="https://developer.xero.com/documentation/api/journals/">Journals</a></li>
+	<li class="page_item page-item-36453"><a href="https://developer.xero.com/documentation/api/linked-transactions/">Linked Transactions</a></li>
+	<li class="page_item page-item-16018"><a href="https://developer.xero.com/documentation/api/manual-journals/">Manual Journals</a></li>
+	<li class="page_item page-item-6730"><a href="https://developer.xero.com/documentation/api/organisation/">Organisation</a></li>
+	<li class="page_item page-item-36266"><a href="https://developer.xero.com/documentation/api/overpayments/">Overpayments</a></li>
+	<li class="page_item page-item-6732"><a href="https://developer.xero.com/documentation/api/payments/">Payments</a></li>
+	<li class="page_item page-item-36260"><a href="https://developer.xero.com/documentation/api/prepayments/">Prepayments</a></li>
+	<li class="page_item page-item-36506"><a href="https://developer.xero.com/documentation/api/purchase-orders/">Purchase Orders</a></li>
+	<li class="page_item page-item-36507"><a href="https://developer.xero.com/documentation/api/quotes/">Quotes</a></li>
+	<li class="page_item page-item-21162"><a href="https://developer.xero.com/documentation/api/receipts/">Receipts</a></li>
+	<li class="page_item page-item-35882"><a href="https://developer.xero.com/documentation/api/repeating-invoices/">Repeating Invoices</a></li>
+	<li class="page_item page-item-15874"><a href="https://developer.xero.com/documentation/api/reports/">Reports</a></li>
+	<li class="page_item page-item-6735"><a href="https://developer.xero.com/documentation/api/tax-rates/">Tax Rates</a></li>
+	<li class="page_item page-item-6738"><a href="https://developer.xero.com/documentation/api/tracking-categories/">Tracking Categories</a></li>
+	<li class="page_item page-item-6741"><a href="https://developer.xero.com/documentation/api/types/">Types</a></li>
+	<li class="page_item page-item-21250"><a href="https://developer.xero.com/documentation/api/users/">Users</a></li>
+</ul>
+</li>
+<li class="page_item page-item-35495 page_item_has_children"><a href="https://developer.xero.com/documentation/payroll-api/">Payroll API &#8211; Australia</a>
+<ul class='children'>
+	<li class="page_item page-item-35590"><a href="https://developer.xero.com/documentation/payroll-api/overview/">Overview &#8211; Payroll Australia</a></li>
+	<li class="page_item page-item-35521"><a href="https://developer.xero.com/documentation/payroll-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-35497"><a href="https://developer.xero.com/documentation/payroll-api/employees/">Employees</a></li>
+	<li class="page_item page-item-35499"><a href="https://developer.xero.com/documentation/payroll-api/leaveapplications/">Leave Applications</a></li>
+	<li class="page_item page-item-36444"><a href="https://developer.xero.com/documentation/payroll-api/leavebalances/">Leave Balances</a></li>
+	<li class="page_item page-item-35500"><a href="https://developer.xero.com/documentation/payroll-api/payitems/">PayItems</a></li>
+	<li class="page_item page-item-35502"><a href="https://developer.xero.com/documentation/payroll-api/payrollcalendars/">Payroll Calendars</a></li>
+	<li class="page_item page-item-35503"><a href="https://developer.xero.com/documentation/payroll-api/payruns/">Pay Runs</a></li>
+	<li class="page_item page-item-35504"><a href="https://developer.xero.com/documentation/payroll-api/payslip/">Payslip</a></li>
+	<li class="page_item page-item-35701"><a href="https://developer.xero.com/documentation/payroll-api/settings/">Settings</a></li>
+	<li class="page_item page-item-35506"><a href="https://developer.xero.com/documentation/payroll-api/superfunds/">SuperFunds</a></li>
+	<li class="page_item page-item-35537"><a href="https://developer.xero.com/documentation/payroll-api/superfundproducts/">SuperFundProducts</a></li>
+	<li class="page_item page-item-35493"><a href="https://developer.xero.com/documentation/payroll-api/timesheets/">Timesheets</a></li>
+	<li class="page_item page-item-35509"><a href="https://developer.xero.com/documentation/payroll-api/types-and-codes/">Types and Codes</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36029 page_item_has_children"><a href="https://developer.xero.com/documentation/payroll-api-us/">Payroll API &#8211; US</a>
+<ul class='children'>
+	<li class="page_item page-item-36030"><a href="https://developer.xero.com/documentation/payroll-api-us/overview-payroll-us/">Overview &#8211; Payroll US</a></li>
+	<li class="page_item page-item-36031"><a href="https://developer.xero.com/documentation/payroll-api-us/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36538"><a href="https://developer.xero.com/documentation/payroll-api-us/timeoff-balances/">Timeoff Balances</a></li>
+	<li class="page_item page-item-36032"><a href="https://developer.xero.com/documentation/payroll-api-us/employees/">Employees</a></li>
+	<li class="page_item page-item-36036"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-items/">Pay Items</a></li>
+	<li class="page_item page-item-36037"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-runs/">Pay Runs</a></li>
+	<li class="page_item page-item-36038"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-schedules/">Pay Schedules</a></li>
+	<li class="page_item page-item-36039"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-stubs/">Pay Stubs</a></li>
+	<li class="page_item page-item-36040"><a href="https://developer.xero.com/documentation/payroll-api-us/settings/">Settings</a></li>
+	<li class="page_item page-item-36041"><a href="https://developer.xero.com/documentation/payroll-api-us/timesheets/">Timesheets</a></li>
+	<li class="page_item page-item-36042"><a href="https://developer.xero.com/documentation/payroll-api-us/types-codes/">Types and Codes</a></li>
+	<li class="page_item page-item-36043"><a href="https://developer.xero.com/documentation/payroll-api-us/work-locations/">Work Locations</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36523 page_item_has_children"><a href="https://developer.xero.com/documentation/assets-api/">Assets API</a>
+<ul class='children'>
+	<li class="page_item page-item-36524"><a href="https://developer.xero.com/documentation/assets-api/overview/">Overview</a></li>
+	<li class="page_item page-item-36913"><a href="https://developer.xero.com/documentation/assets-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36914"><a href="https://developer.xero.com/documentation/assets-api/assets/">Assets</a></li>
+	<li class="page_item page-item-36915"><a href="https://developer.xero.com/documentation/assets-api/asset-types/">Asset Types</a></li>
+	<li class="page_item page-item-36916"><a href="https://developer.xero.com/documentation/assets-api/settings/">Settings</a></li>
+	<li class="page_item page-item-36917"><a href="https://developer.xero.com/documentation/assets-api/types/">Types</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36204 page_item_has_children"><a href="https://developer.xero.com/documentation/files-api/">Files API</a>
+<ul class='children'>
+	<li class="page_item page-item-36210"><a href="https://developer.xero.com/documentation/files-api/overview-files/">Overview</a></li>
+	<li class="page_item page-item-36211"><a href="https://developer.xero.com/documentation/files-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36212"><a href="https://developer.xero.com/documentation/files-api/files/">Files</a></li>
+	<li class="page_item page-item-36213"><a href="https://developer.xero.com/documentation/files-api/folders/">Folders</a></li>
+	<li class="page_item page-item-36214"><a href="https://developer.xero.com/documentation/files-api/associations/">Associations</a></li>
+	<li class="page_item page-item-36215"><a href="https://developer.xero.com/documentation/files-api/types/">Types</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36055 page_item_has_children"><a href="https://developer.xero.com/documentation/practice-manager/">Practice Manager API</a>
+<ul class='children'>
+	<li class="page_item page-item-36056"><a href="https://developer.xero.com/documentation/practice-manager/overview-practice-manager-api/">Overview &#8211; Practice Manager</a></li>
+</ul>
+</li>
+<li class="page_item page-item-6840 page_item_has_children"><a href="https://developer.xero.com/documentation/api-guides/">How-to Guides</a>
+<ul class='children'>
+	<li class="page_item page-item-36139"><a href="https://developer.xero.com/documentation/api-guides/integration-best-practices/">Integration Best Practices</a></li>
+	<li class="page_item page-item-35962"><a href="https://developer.xero.com/documentation/api-guides/certification-pre-flight-checklist/">Certification Checklist</a></li>
+	<li class="page_item page-item-35889"><a href="https://developer.xero.com/documentation/api-guides/conversions/">Conversions Guide</a></li>
+	<li class="page_item page-item-2967"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-crm-system-with-xero/">CRM and Xero</a></li>
+	<li class="page_item page-item-35733"><a href="https://developer.xero.com/documentation/api-guides/farming-xero/">Farming and Xero</a></li>
+	<li class="page_item page-item-36518"><a href="https://developer.xero.com/documentation/api-guides/inventory-integration-options/">Inventory Integration Options</a></li>
+	<li class="page_item page-item-10478"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-inventory-system-with-xero/">&#8211; Accounting for Inventory</a></li>
+	<li class="page_item page-item-36276 page_item_has_children"><a href="https://developer.xero.com/documentation/api-guides/tracked-inventory-in-xero/">&#8211; Tracked Inventory in Xero</a></li>
+	<li class="page_item page-item-32188"><a href="https://developer.xero.com/documentation/api-guides/handling-payment-processor-receipts-in-xero/">Payment processor receipts</a></li>
+	<li class="page_item page-item-35648"><a href="https://developer.xero.com/documentation/api-guides/payment-services-integration-with-xero/">Payment services and Xero</a></li>
+	<li class="page_item page-item-7830"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-payroll-system-with-xero/">Payroll and Xero</a></li>
+	<li class="page_item page-item-36583"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-pos-system-with-xero/">Point of Sale and Xero</a></li>
+</ul>
+</li>
+	</ul>
+</div>
+			</div>
+		  <div class="span9">
+			  <div class="pageFrame">
+			    <div id="primary" class="site-content">
+				    <div id="content" role="main">
+			      				    <div class="entry-content">
+	<h1 class="api">Release Notes &#8211; Core API</h2>
+<div class="contentsNav"></div>
+<hr/>
+<p>To be notified as we release new features, subscribe to the <a href="http://developer.xero.com/subscribe-to-the-xero-api-developer-mailing-list/">Xero Developer mailing list</a>.</p>
+<hr/><a name="2.232"></a></p>
+<h3>August 2nd 2016</h3>
+<p><strong>Bug Fix</strong></p>
+<ul>
+<li>Improved the validation on <a href="http://developer.xero.com/documentation/api/invoices">Contacts</a> when the max character length is exceeded for a particular element. Previously the error message was generic.</li>
+</ul>
+<hr/><a name="2.228"></a></p>
+<h3>July 13th 2016</h3>
+<p><strong>Bug Fix</strong></p>
+<ul>
+<li>Fixed a bug updating <a href="http://developer.xero.com/documentation/api/invoices">Invoice</a> LineItems that incorrectly returned a 400 error any time a DiscountRate and LineAmount were provided on a LineItem.</li>
+</ul>
+<hr/><a name="2.225"></a></p>
+<h3>July 1st 2016</h3>
+<p><strong>Bug Fix</strong></p>
+<ul>
+<li>Fixed a bug in PUT/POST <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a> that resulted in a 200 response code but a generic validation error in the body. This bug occurred when the Contact had a default tracking category that had been deleted.
+</ul>
+<hr/><a name="2.222"></a></p>
+<h3>June 21st 2016</h3>
+<p><strong>New Feature</strong></p>
+<ul>
+<li> DefaultSalesTax and DefaultPurchasesTax added to GET <a href="http://developer.xero.com/documentation/api/organisation">Organisation</a>.
+</ul>
+<hr/><a name="XD-CECCHINO"></a></p>
+<h3>June 20th 2016</h3>
+<p><strong>Bug Fix</strong></p>
+<ul>
+<li> Fixed a bug with <a href="http://developer.xero.com/documentation/api/items">Items</a> that caused items to be returned with both a COGSAccountCode and Purchases AccountCode if they had been changed from untracked to tracked (or vice versa).
+</ul>
+<hr/><a name="2.219"></a></p>
+<h3>June 8th 2016</h3>
+<p><strong>Bug Fix</strong></p>
+<ul>
+<li>You can no longer create public and partner apps with &#8220;Xero&#8221; in the name.
+</ul>
+<hr/><a name="2.2.213"></a></p>
+<h3>May 10th 2016</h3>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> Enhanced the validation on PUT/POST <a href="http://developer.xero.com/documentation/api/contacts">Contacts</a> to make it clearer when an archived Contact with the same ContactNumber already exists.
+</ul>
+<hr/><a name="2.2.212"></a></p>
+<h3>May 9th 2016</h3>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> Fixed a bug in POST <a href="http://developer.xero.com/documentation/api/purchase-orders">PurchaseOrders</a> that removed the AccountCode from LineItems in some cases.
+</ul>
+<hr/><a name="2.208"></a></p>
+<h3>April 19th 2016</h3>
+<p><strong>New Feature</strong></p>
+<ul>
+<li> Retrieve the Online Invoice Url for sales <a href="http://developer.xero.com/documentation/api/invoices#onlineinvoice">Invoices</a>.
+</ul>
+<hr/><a name="2.193"></a></p>
+<h3>March 15th 2016</h3>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> Fixed a bug in POST <a href="http://developer.xero.com/documentation/api/purchase-orders">PurchaseOrders</a> that was causing LineItems to duplicate in the Xero UI.
+</ul>
+<hr/><a name="2.191"></a></p>
+<h3>Release: March 8th 2016</h3>
+<p>Date: March 8th, 2016</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> POST <a href="http://developer.xero.com/documentation/api/purchase-orders">PurchaseOrders</a> &#8211; You can now use the POST method to create and update purchase orders.
+</ul>
+<hr/><a name="2.180"></a></p>
+<h3>Release: January 22nd 2016</h3>
+<p>Date: January 22nd, 2016</p>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> Fixed an issue that occured when updating Items using an ItemCode that didn&#8217;t match the case of the value stored in Xero.
+</ul>
+<hr/><a name="2.179"></a></p>
+<h3>Release: January 21st 2016</h3>
+<p>Date: January 21st, 2016</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> If-Modified-Since support for GET <a href="http://developer.xero.com/documentation/api/accounts">Accounts</a>
+</ul>
+<hr/><a name="2.178"></a></p>
+<h3>Release: January 20th 2016</h3>
+<p>Date: January 20th, 2016</p>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> Fixed a bug (introduced in the previous release) that caused 400 errors when creating sales invoices using tracked items and not specifying the account code (i.e. relying on the default account code).
+</ul>
+<hr/><a name="2.176"></a></p>
+<h3>Release: January 18th 2016</h3>
+<p>Date: January 18th, 2016</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> PUT <a href="http://developer.xero.com/documentation/api/purchase-orders">PurchaseOrders</a> &#8211; create purchase orders
+</ul>
+<p><strong>Coming Soon</strong></p>
+<ul>
+<li>POST (Update) PurchaseOrders.
+</ul>
+<hr/><a name="2.175"></a></p>
+<h3>Release: January 12th 2016</h3>
+<p>Date: January 12th, 2016</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> GET <a href="http://developer.xero.com/documentation/api/invoice-reminders">InvoiceReminders/Settings</a> &#8211; returns true/false if an organisation has invoice reminders enabled.
+</ul>
+<hr/><a name="2.172"></a></p>
+<h3>Release: December 15th 2015</h3>
+<p>Date: December 15th, 2015</p>
+<p><strong>Bug fix</strong></p>
+<ul>
+<li> POST <a href="http://developer.xero.com/documentation/api/items">Items</a> &#8211; Previously, the AccountCode in PurchaseDetails was being nulled when updating non-tracked items with &lt;COGSAccountCode i:nil=&#8221;true&#8221; /&gt; in the request.<br />
+As raised in <a href="https://community.xero.com/developer/discussion/13081942">Community</a>.
+</ul>
+<hr/><a name="2.171"></a></p>
+<h3>Release: December 11th 2015</h3>
+<p>Date: December 11th, 2015</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> GET <a href="http://developer.xero.com/documentation/api/purchase-orders">PurchaseOrders</a>.
+</ul>
+<p><strong>Coming Soon (Jan 2016)</strong></p>
+<ul>
+<li> PUT &#038; POST PurchaseOrders.
+</ul>
+<hr/><a name="2.166"></a></p>
+<h3>Release: November 30th 2015</h3>
+<p>Date: November 30th, 2015</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> Updated the validation rules for Top Level Domains (TLDs) when setting the Url field on the <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a> endpoint.
+</ul>
+<hr/><a name="2.163"></a></p>
+<h3>Release: November 23rd 2015</h3>
+<p>Date: November 23rd, 2015</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> GET <a href="http://developer.xero.com/documentation/api/linked-transactions/#GET">LinkedTransactions</a> now returns the SourceTransactionTypeCode allowing you to see if the billable expesnse was created from an invoice (ACCPAY) or bank transaction (SPEND).
+</ul>
+<hr/><a name="2.160"></a></p>
+<h3>Release: November 18th 2015</h3>
+<p>Date: November 18th, 2015</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> Delete <a href="https://developer.xero.com/documentation/api/Items/#DELETE">items</a>
+</ul>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>Added validation to prevent both purchase account code and cogs account code being added to a tracked item.
+<li>Added validation to prevent deleted tax rates being used on an item.
+</ul>
+<hr/><a name="2.159"></a></p>
+<h3>Release: November 16th 2015</h3>
+<p>Date: November 16th, 2015</p>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>Fixed a bug that prevented users from regenerating their consumer key and secret in app.xero.com.
+<li>Fixed a bug that caused 500 errors for a small number of organisations on GET <a href="https://developer.xero.com/documentation/api/Users">Users</a>.
+</ul>
+<hr/><a name="2.158"></a></p>
+<h3>Release: November 5th 2015</h3>
+<p>Date: November 5th, 2015</p>
+<p><strong>New features and improvements</strong></p>
+<ul>
+<li> Delete <a href="https://developer.xero.com/documentation/api/Payments/#POST">payments</a> on credit notes, prepayments and overpayments.
+</ul>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>Fixed an issue that prevented US payroll tax payment <a href="https://developer.xero.com/documentation/api/Journals">journals</a> being returned.
+</ul>
+<hr/><a name="2.157"></a></p>
+<h3>Release: November 3rd 2015</h3>
+<p>Date: November 3rd, 2015</p>
+<p><strong>New features and improvements</strong><br />
+&#8211; LineItemIDs are now returned on GET <a href="http://developer.xero.com/documentation/api/banktransactions/">BankTransactions</a>.<br />
+&#8211; LineItemIDs can now be used when updating <a href="http://developer.xero.com/documentation/api/banktransactions/">BankTransactions</a>.<br />
+&#8211; Use SPEND BankTransactions as the source transaction when creating <a href="http://developer.xero.com/documentation/api/linked-transactions/">LinkedTransactions</a> (Billable Expenses).</p>
+<hr/><a name="2.156"></a></p>
+<h3>Release: November 2nd 2015</h3>
+<p>Date: November 2nd, 2015</p>
+<p><strong>New features and improvements</strong><br />
+You can set Report Codes for AU &#038; NZ orgs using the <a href="http://developer.xero.com/documentation/api-guides/conversions/">Setup</a> endpoint.</p>
+<hr/><a name="2.152"></a></p>
+<h3>Release: October 20th 2015</h3>
+<div style="width:400px; margin:0 auto">
+<blockquote class="twitter-video" lang="en">
+<p lang="en" dir="ltr">Just released: inventory features in the accounting API: <a href="https://t.co/eC58kNGqO1">https://t.co/eC58kNGqO1</a> ^RQ <a href="https://t.co/2Yji4GXCNw">pic.twitter.com/2Yji4GXCNw</a></p>
+<p>&mdash; XeroAPI (@XeroAPI) <a href="https://twitter.com/XeroAPI/status/657014051365457920">October 22, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p><strong>New features and improvements</strong><br />
+Tracked inventory is now supported via the <a href="http://developer.xero.com/documentation/api/items">Items</a> endpoint.<br />
+1. Create and update tracked inventory items.<br />
+2. Retrieve the quantity on hand total cost pool for tracked inventory items.<br />
+3. Update the Name and Purchase description of both tracked and untracked items.</p>
+<p><strong>Coming Soon</strong><br />
+The ability to delete tracked and untracked items.</p>
+<hr/><a name="2.151"></a></p>
+<h3>Release: October 14th 2015</h3>
+<p>Date: October 14th, 2015</p>
+<p><strong>Bug Fixes</strong><br />
+1. Fixed a 500 error being returned when phone number length exceeded 50 characters on Contacts<br />
+2. Improved error messaging on Payments<br />
+3. Updating your email address in Xero will now display correctly in app.xero.com and developer.xero.com</p>
+<hr/><a name="2.145"></a></p>
+<h3>Release: September 14th 2015</h3>
+<p>Date: September 14th, 2015</p>
+<p><strong>New features and improvements</strong><br />
+You can now update the payment terms on <a href="http://developer.xero.com/documentation/api/contacts">Contacts</a>.</p>
+<p><strong>Bug Fixes</strong><br />
+Fixed a bug that stopped payment terms from being returned on GET <a href="http://developer.xero.com/documentation/api/contacts">Contacts</a> when the Day was set to zero (e.g. 0 days after invoice date).</p>
+<hr/><a name="2.139"></a></p>
+<h3>Release: September 11th 2015</h3>
+<p>Date: September 11th, 2015</p>
+<p><strong>New features and improvements</strong><br />
+The <a href="http://developer.xero.com/documentation/api/linked-transactions">Linked Transactions</a> endpoint which exposes Xero&#8217;s new <a href="http://help.xero.com/Billable-Expenses">billable expenses</a> functionality. Retrieve, create, update and delete linked transactions (billable expenses).</p>
+<p><strong>Coming Soon</strong><br />
+Support for the If-Modified-Since header and using multiple filters in combination.</p>
+<hr/><a name="2.142"></a></p>
+<h3>Release: September 1st 2015</h3>
+<p>Date: September 1st, 2015</p>
+<p><strong>New features and improvements</strong><br />
+The <a href="http://developer.xero.com/documentation/api/accounts">Accounts</a> endpoint now returns the BankAccountType which allows you to tell the difference between Paypal, credit card and regular bank accounts.</p>
+<p><strong>Bug Fixes</strong><br />
+Fixed a bug that always caused IsDemoCompany to return false on the  <a href="http://developer.xero.com/documentation/api/organisation">Organisation</a> endpoint.</p>
+<hr/><a name="2.136"></a></p>
+<h3>Release: August 14th 2015</h3>
+<p>Date: August 14, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Prepayments and overpayments that have been allocated to invoices are now returned on the <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a> endpoint when using paging.</p>
+<hr/><a name="2.131"></a></p>
+<h3>Release: July 28th 2015</h3>
+<p>Date: July 28, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. LineItemIDs are now returned on paged <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a> </p>
+<hr/><a name="2.130"></a></p>
+<h3>Release: July 27th 2015</h3>
+<p>Date: July 27, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. BankAmount on <a href="http://developer.xero.com/documentation/api/payments/">Payments</a> &#8211; The payments endpoint now exposes BankAmount, the payment amount after conversion to the bank&#8217;s currency.</p>
+<p><strong>Coming Soon </strong><br />
+1. LineItemIDs on GET paged invoices</p>
+<hr/><a name="2.128"></a></p>
+<h3>Release: July 22nd 2015</h3>
+<p>Date: July 22, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. LineItemIDs on <a href="http://developer.xero.com/documentation/api/invoices/">Invoices</a> &#8211; The invoices endpoint now exposes LineItemIDs when getting individual invoices and accepts them on updates. This is an important change to support the upcoming billable expenses feature. See our <a href="https://community.xero.com/developer/discussion/10973749/"> community post </a> for more details.</p>
+<p><strong>Coming Soon </strong><br />
+1. LineItemIDs on GET paged invoices</p>
+<hr/><a name="2.123"></a></p>
+<h3>Release: July 7th 2015</h3>
+<p>Date: July 7, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Cash basis Profit &#038; Loss and Balance Sheet <a href="http://developer.xero.com/documentation/api/reports/">reports</a> can now be retrieved using the paymentsOnly parameter</p>
+<hr/><a name="2.119"></a></p>
+<h3>Release: June 17th 2015</h3>
+<p>Date: June 17, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Delete <a href="http://developer.xero.com/documentation/api/accounts/#DELETE">Accounts</a></p>
+<hr/><a name="2.109"></a></p>
+<h3>Release: May 4th 2015</h3>
+<p>Date: May 04, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Update <a href="http://developer.xero.com/documentation/api/accounts/#POST-general">Accounts</a></p>
+<hr/><a name="2.106"></a></p>
+<h3>Release: April 21st, 2015</h3>
+<p>Date: April 21st, 2015</p>
+<p><strong>Bug Fixes</strong><br />
+1. Fixed a bug that prevented the case of a <a href="https://developer.xero.com/documentation/api/contacts">Contacts</a>&#8216; Name from being updated.<br />
+2. Fixed a bug on the <a href="https://developer.xero.com/documentation/api/journals">Journals</a> endpoint that prevented some types of journals from being returned (fixed assets, reconciliation adjustments, conversion balances). </p>
+<hr/><a name="2.98"></a></p>
+<h3>Release: March 26th 2015</h3>
+<p>Date: March 26, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Delete <a href="https://developer.xero.com/documentation/api/tracking-categories/#DELETE">TrackingCategories</a></p>
+<p><strong>What’s next?</strong></p>
+<p>1. Inventory accounting enhancements</p>
+<hr/><a name="2.97"></a></p>
+<h3>Release: March 25th 2015</h3>
+<p>Date: March 25, 2015</p>
+<div style="width:400px; margin:0 auto">
+<blockquote class="twitter-video" lang="en-gb">
+<p lang="en" dir="ltr">A quick update on a recent <a href="https://twitter.com/hashtag/API?src=hash">#API</a> feature release. Let us know if you like the videos! ^RQ <a href="http://t.co/JLPzvmFJvE">pic.twitter.com/JLPzvmFJvE</a></p>
+<p>&mdash; XeroAPI (@XeroAPI) <a href="https://twitter.com/XeroAPI/status/596452759747956736">May 7, 2015</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+<p><strong>New features and improvements</strong><br />
+1. Create refunds for Overpayments and Prepayments using the <a href="https://developer.xero.com/documentation/api/payments">payments</a> endpoint</p>
+<p><strong>What’s next?</strong></p>
+<p>1. More Inventory accounting enhancements</p>
+<hr/><a name="2.96"></a></p>
+<h3>Release: March 24th 2015</h3>
+<p>Date: March 24, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. New validations to support tracked inventory items<br />
+2. New <a href="https://developer.xero.com/documentation/api/types/#AccountTypes">Account Type</a> INVENTORY</p>
+<p><strong>What’s next?</strong></p>
+<p>1. More Inventory accounting enhancements</p>
+<hr/><a name="2.94"></a></p>
+<h3>Release: March 17th 2015</h3>
+<p>Date: March 17, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. Overpayments Allocations. PUT <a href="https://developer.xero.com/documentation/api/overpayments/#PUT">Overpayments</a>/{OverpaymentID}/Allocations<br />
+2. Prepayments Allocations. PUT <a href="https://developer.xero.com/documentation/api/prepayments/#PUT">Prepayments</a>/{PrepaymentID}/Allocations</p>
+<p><strong>Bug Fix</strong><br />
+1. Fixed a bug that stopped allocated credit notes being returned when retrieving multiple invoices</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Inventory accounting enhancements</p>
+<hr/><a name="2.91"></a></p>
+<h3>Release: March 11th 2015</h3>
+<p>Date: March 11, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. New endpoint, Overpayments. GET <a href="https://developer.xero.com/documentation/api/overpayments/">Overpayments</a><br />
+2. New endpoint, Prepayments. GET <a href="https://developer.xero.com/documentation/api/prepayments/">Prepayments</a><br />
+3. UI refresh and log viewing enhancement to the <a href="https://app.xero.com">developer center</a></p>
+<p><strong>What’s next?</strong></p>
+<p>1. Create &#038; update Prepayments and Overpayments</p>
+<hr/><a name="2.90"></a></p>
+<h3>Version 2.90</h3>
+<p>Date: March 4, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. GET <a href="http://developer.xero.com/documentation/api/journals">Journals</a> and <a href="http://developer.xero.com/documentation/api/manual-journals">ManualJournals</a> &#8211; The TrackingOptionID is now returned on journal lines.</p>
+<p>2. GET <a href="http://developer.xero.com/documentation/api/expense-claims">ExpenseClaims</a> &#8211; Tracking details are now returned on receipt line items when retrieving an individual expense claim.</p>
+<p><strong>Bug fixes</strong><br />
+1. Fixed a 500 error for TaxComponent Names longer than 50 characters on PUT/POST TaxRates</p>
+<p><strong>What’s next?</strong></p>
+<p>1. GET Prepayments and Overpayments</p>
+<hr/><a name="2.89"></a></p>
+<h3>Version 2.89</h3>
+<p>Date: February 26, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. PUT/POST <a href="http://developer.xero.com/documentation/api/Tax-Rates">TaxRates</a> &#8211; The MOSSSALES ReportTaxType is now supported for create and update (UK organisations only).</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Tracking details on expense claims</p>
+<hr/><a name="2.88"></a></p>
+<h3>Version 2.88</h3>
+<p>Date: February 25, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. POST <a href="http://developer.xero.com/documentation/api/Accounts">Accounts</a> &#8211; You can update the status of an Account from ACTIVE to ARCHIVED.</p>
+<p><strong>What’s next?</strong></p>
+<p>1. MOSS VAT tax rate support (UK only)</p>
+<hr/><a name="2.83"></a></p>
+<h3>Version 2.83</h3>
+<p>Date: January 22, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. GET <a href="http://developer.xero.com/documentation/api/Journals">Journals</a> &#8211; The SourceID and SourceType are now returned. This enables you to link journals with source transactions. </p>
+<p><strong>Bug fixes</strong><br />
+1. GET <a href="http://developer.xero.com/documentation/api/BankTransactions/#Paging">BankTransactions paging </a>&#8211; Tax inclusive bank transactions now return tax inclusive unit amounts when paging is used.<br />
+2. GET <a href="http://developer.xero.com/documentation/api/BankTransactions/#Paging">BankTransactions paging </a>&#8211; ItemCode is now included on LineItems when paging is used.<br />
+3. GET <a href="http://developer.xero.com/documentation/api/BankTransactions/#Paging">BankTransactions paging </a>&#8211; UnitAmount is now 2DP by default when paging is used.</p>
+<hr/><a name="2.79"></a></p>
+<h3>Version 2.79</h3>
+<p>Date: January 13, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. GET ManualJournals &#8211; <a href="http://developer.xero.com/documentation/api/Manual-Journals/#Paging">optional paging</a> of results with journal line details included.</p>
+<p><strong>Bug fix</strong><br />
+1. GET <a href="http://developer.xero.com/documentation/api/BankTransactions/#Paging">BankTransactions paging </a>&#8211; Tax inclusive bank transactions now return tax inclusive line amounts when paging is used.</p>
+<hr/><a name="2.78"></a></p>
+<h3>Version 2.78</h3>
+<p>Date: January 7, 2015</p>
+<p><strong>New features and improvements</strong><br />
+1. GET BankTransactions &#8211; <a href="http://developer.xero.com/documentation/api/BankTransactions/#Paging">optional paging</a> of results with line item details included.</p>
+<hr/><a name="2.74.3"></a></p>
+<h3>Version 2.74.3</h3>
+<p>Date: December 8, 2014</p>
+<p><strong>New features and improvements</strong><br />
+1. Payments &#8211; <a href="https://developer.xero.com/documentation/api/Payments/#POST">delete a payment</a>.</p>
+<hr/><a name="2.73"></a></p>
+<h3>Version 2.73</h3>
+<p>Date: November 25, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Account Number &#8211; Retrieve and update the Account Number on <a href="https://developer.xero.com/documentation/api/Contacts/">Contacts</a>.<br />
+2. Default Tracking Categories &#8211; Retrieve and update the default tracking categories on <a href="https://developer.xero.com/documentation/api/Contacts/">Contacts</a> </p>
+<p><strong>What’s next?</strong></p>
+<p>1. Deleting Payments on Invoices</p>
+<hr/><a name="2.72"></a></p>
+<h3>Version 2.72</h3>
+<p>Date: November 20, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Internal fixes and improvements to some of our internal logging system</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Contact Account Number</p>
+<hr/><a name="2.71"></a></p>
+<h3>Version 2.71</h3>
+<p>Date: November 17, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="https://developer.xero.com/documentation/api/Tracking-Categories/">Tracking Categories</a> &#8211; Create and update tracking categories and options.</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Contact Account Number</p>
+<hr/><a name="2.69"></a></p>
+<h3>Version 2.69</h3>
+<p>Date: November 4, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="https://developer.xero.com/documentation/api/Contacts/">Contacts</a> &#8211; Default BrandingTheme is now returned on GET requests.<br />
+2. <a href="https://developer.xero.com/documentation/api/Reports/#ProfitAndLoss">Reports</a> &#8211; The Profit &#038; Loss Report now supports two tracking categories.<br />
+3. <a href="https://developer.xero.com/documentation/api/Credit-Notes/">CreditNotes</a> &#8211; You can now create zero total credit notes.</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Add and update tracking categories and options<br />
+2. Contact Account Number</p>
+<hr/><a name="2.68"></a></p>
+<h3>Version 2.68</h3>
+<p>Date: October 22, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="https://developer.xero.com/documentation/api/ContactGroups/">ContactGroups</a> &#8211; Add multiple contacts to a contact group in a single request.<br />
+2. <a href="https://developer.xero.com/documentation/api/ContactGroups/#AddContact">ContactGroups</a> &#8211; Remove all contacts from a contact group.</p>
+<p><strong>What’s next?</strong></p>
+<p>Add and update tracking categories and options</p>
+<hr/><a name="2.67"></a></p>
+<h3>Version 2.67</h3>
+<p>Date: September 23, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="https://developer.xero.com/documentation/api/ContactGroups/">ContactGroups</a> &#8211; a new endpoint to create and update contact groups.<br />
+2. Add a contact to <a href="https://developer.xero.com/documentation/api/ContactGroups/#AddContact">ContactGroups</a><br />
+3. Remove a contact from <a href="https://developer.xero.com/documentation/api/ContactGroups/#RemoveContact">ContactGroups</a></p>
+<p><strong>What’s next?</strong></p>
+<p>Add and remove multiple contacts form ContactGroups</p>
+<hr/><a name="2.66"></a></p>
+<h3>Version 2.66</h3>
+<p>Date: Sept 22, 2014</p>
+<p><strong>Bug fix</strong></p>
+<p>1. My Applications &#8211; You can now add callback domains where the first character is a number (e.g. 1app.com)<br />
+2. My Applications &#8211;  Fixed the name validation on creating a private application. The application name must be unique amongst the apps registered to a developer.<br />
+3. <a href="http://developer.xero.com/documentation/api/Journals/">Journals</a> &#8211; When a connection is authorised by a user that has &#8216;no reports&#8217; access a 401 error is returned (previously a 500 was returned).</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Add/update Contact Groups<br />
+2. Add/remove Contacts to/from Contact Groups</p>
+<hr/><a name="2.65"></a></p>
+<h3>Version 2.65</h3>
+<p>Date: Sept 1, 2014</p>
+<p><strong>Bug fix</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/Invoices/">Invoices</a> &#8211; Fine-tuned the line amount calculation when a discount rate us applied. Previously certain edge cases were causing 400 errors due to rounding. </p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.64"></a></p>
+<h3>Version 2.64</h3>
+<p>Date: Aug 15, 2014</p>
+<p><strong>Bug fix</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/contacts/">Contacts</a> &#8211; Corrected inconsistent behaviour when retrieving contact persons in the Demo Company.</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.63"></a></p>
+<h3>Version 2.63</h3>
+<p>Date: Aug 13, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/contacts/">Contacts</a> &#8211; update to support a default sales account and default purchases account on GET, PUT and POST.</p>
+<p><strong>Bug fixes</strong><br />
+1. Corrected the default (2 decimal place) rounding on UnitAmount when calculating LineAmount on line items.<br />
+2. My Apps &#8211; fixed the bug preventing updates to public and private apps with no callback domain specified.</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.62"></a></p>
+<h3>Version 2.62</h3>
+<p>Date: Jul 30, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. GET <a href="http://developer.xero.com/documentation/api/tracking-categories/">Tracking Categories</a> &#8211; a new opt-in parameter to retrieve ARCHIVED tracking categories &#038; options and a Status element now is returned for tracking options.</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.61"></a></p>
+<h3>Version 2.61</h3>
+<p>Date: Jul 28, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Expense claims now return the &lt;User&gt; element even after the user has been deleted from Xero.<br />
+2. SUBMITTED expense claims that contain a receipt with a deleted &lt;AccountCode&gt; will now return successfully.<br />
+3. Fixed an issue with tracking categories in the P&#038;L report. Previously, if an organisation had deleted tracking categories and created new ones multiple times they were not being picked up by the report.</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.60"></a></p>
+<h3>Version 2.60</h3>
+<p>Date: Jul 18, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Implemented a change to how we process concurrent requests when applying payments which makes it more efficient and more robust. </p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.59"></a></p>
+<h3>Version 2.59</h3>
+<p>Date: Jul 15, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Support for setting attachments to be included with online invoices. <a href="http://developer.xero.com/documentation/api/attachments/#IncludeOnline">Learn more</a><br />
+2. <a href="http://developer.xero.com/documentation/api/organisation/">GET Organisation</a> &#8211; SalesTaxBasis and SalesTaxPeriod added to the Organisation endpoint</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.58"></a></p>
+<h3>Version 2.58</h3>
+<p>Date: July 9, 2014</p>
+<p><strong>Bug fixes</strong><br />
+1. Removed the &#8216;Date Imported into Xero&#8217; Column from the BankStatement report.</p>
+<p><strong>What’s next?</strong></p>
+<p>Add/Update Tracking Categories</p>
+<hr/><a name="2.57"></a></p>
+<h3>Version 2.57</h3>
+<p>Date: July 7, 2014</p>
+<p><strong>Bug fixes</strong><br />
+1. Improved validation and error messaging on the Accounts endpoint when invalid Type values are used.<br />
+2. Improved error messaging when uploading invalid public certificates during app registration.<br />
+3. Resolved issues around specifying multiple callback domains (Partner apps only). </p>
+<p><strong>What’s next?</strong></p>
+<p>Add/Update Tracking Categories</p>
+<hr/><a name="2.56"></a></p>
+<h3>Version 2.56</h3>
+<p>Date: Jul 3, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. An issue affecting invoice line items with zero quantities on tax inclusive invoices has been resolved.</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.55"></a></p>
+<h3>Version 2.55</h3>
+<p>Date: Jul 1, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Support for 4dp on line items. <a href="http://developer.xero.com/documentation/advanced-docs/rounding-in-xero/#title2">Learn more</a></p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolves a fix for issues with tax inclusive issues with a line item .</p>
+<p><strong>What’s next?</strong></p>
+<p>1.Add/Update Tracking Categories</p>
+<hr/><a name="2.54"></a></p>
+<h3>Version 2.54</h3>
+<p>Date: June 9, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Allow ampersand in file attachments<br />
+2. Removed HasAttachments from nested contacts<br />
+3. Added fix for Repeating Invoice attachments</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Invoice improvements &#8211; be able to retrieve online invoice urls</p>
+<hr/><a name="2.53"></a></p>
+<h3>Version 2.53</h3>
+<p>Date: May 29, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/banktransactions/">Bank Transactions</a> &#8211; update to support ItemCodes on GET,PUT POST methods<br />
+2. <a href="http://developer.xero.com/documentation/api/attachments/">Attachments</a> &#8211; add support for attachments on Accounts, Bank Transactions, Bank Transfers, Contacts, Credit Notes, Invoices (upgraded to all status codes) , ManualJournals &#038; Repeating Invoices</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolves an issue with updating tax rates.</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Invoice improvements &#8211; be able to retrieve online invoice urls</p>
+<hr/><a name="2.52"></a></p>
+<h3>Version 2.52</h3>
+<p>Date: May 28, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. POST Setup (beta) &#8211; new endpoint to setup chart of accounts, conversion date and conversion balances. <a href="https://developer.xero.com/documentation/api-guides/conversions/">Learn more</a></p>
+<p><strong>What’s next?</strong></p>
+<p>Enhanced attachments support</p>
+<hr/><a name="2.51"></a></p>
+<h3>Version 2.51</h3>
+<p>Date: May 12, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/tax-rates/#POST" title="POST Tax Rates"> POST TaxRates</a> &#8211; added support for updating tax rates</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Contacts and Repeating Invoices &#8211;  Resolves an issue with the new payment term TYPE for day(s) after the end of the bill month not being shown if used.</p>
+<p><strong>What’s next?</strong></p>
+<p>Conversion Balances</p>
+<hr/><a name="2.50"></a></p>
+<h3>Version 2.50</h3>
+<p>Date: May 5, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>Contact improvements<br />
+1. Add support to <a href="http://developer.xero.com/documentation/api/contacts/#title8">archive existing contacts</a><br />
+2. Ability to set the <a href="http://developer.xero.com/documentation/api/contacts/#title1">XeroNetworkKey</a> for contacts. <a href="http://help.xero.com/#X2XReceiveKey">Learn more</a></p>
+<p><strong>What’s next?</strong></p>
+<p>Ability to update TaxRates</p>
+<hr/><a name="2.49"></a></p>
+<h3>Version 2.49</h3>
+<p>Date: Apr 30, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolves issue with editing private applications<br />
+2. Show validation error when making payments using non-existent invoice number<br />
+3. Resolves an issue with expense claims status changes</p>
+<p><strong>What’s next?</strong></p>
+<p>Conversion Balances</p>
+<hr/><a name="2.46"></a></p>
+<h3>Version 2.46</h3>
+<p>Date: Mar 31, 2014</p>
+<p><strong>New features and improvements</strong><br />
+1. GET <a href="http://developer.xero.com/documentation/api/repeating-invoices/">Repeating Invoices</a> &#8211; ability to retrieve repeating invoices templates.</p>
+<p><strong>Bug fixes</strong><br />
+1. Resolves API blocking invoice dates before 2006<br />
+2. Allowing duplicate private applications if a different provider</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Ability to replace a chart of accounts</p>
+<hr/><a name="2.45"></a></p>
+<h3>Version 2.45</h3>
+<p>Date: Mar 25, 2014</p>
+<p><strong>New features and improvements</strong><br />
+1. <a href="http://developer.xero.com/documentation/api/users/">GET Users</a> &#8211; an EmailAddress element is now return in the response for each user.</p>
+<p><strong>Bug fixes</strong><br />
+1. Resolves an issue with foreign currency invoice payments<br />
+2. Resolves an issue with JSON responses for invoice overpayments</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Retrieving repeating invoices</p>
+<hr/><a name="2.44.2"></a></p>
+<h3>Version 2.44.2</h3>
+<p>Date: Mar 20, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Fix for invoice filters using Contains, StartsWith, and EndsWith<br />
+2. Resolves an issue with filtering BankTransactions on Contact.Name<br />
+3. Resolves an issue with Updating ACCPAY invoices without lineitems</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Retrieving repeating invoices</p>
+<hr/><a name="2.44.1"></a></p>
+<h3>Version 2.44.1</h3>
+<p>Date: Wed 19 March, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. GET Invoices &#8211; resolves an issue with applying date range filters on the Date element</p>
+<p><strong>What&#8217;s next ?</strong></p>
+<p>1. Retrieving repeating invoices</p>
+<hr/><a name="2.44"></a></p>
+<h3>Version 2.44</h3>
+<p>Date: Tue 18 March, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. GET Invoices &#8211; <a href="http://developer.xero.com/documentation/api/invoices/#title10">optional paging of results with line item details included</a></p>
+<p><strong>Bug fixes</strong></p>
+<p>1. GET Invoices &#8211; resolves an issue with the HasAttachments element</p>
+<p><strong>What&#8217;s next ?</strong></p>
+<p>1. Retrieving repeating invoices</p>
+<hr/><a name="2.43"></a></p>
+<h3>Version 2.43</h3>
+<p>Date: Thu 27 Feb, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. PUT Payments &#8211; be able to <a href="http://developer.xero.com/documentation/api/payments/#title6">mark payments as reconciled</a><br />
+2. POST Invoices &#8211; be able to set <a href="http://developer.xero.com/documentation/api/invoices/#title1">ExpectedPaymentDate</a> and <a href="http://developer.xero.com/documentation/api/invoices/#title1">PlannedPaymentDate</a><br />
+3. GET Contacts &#8211; be able to apply an additional flag to return <a href="http://developer.xero.com/documentation/api/contacts/#title9">archived contacts</a> as well (excluded by default)</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Be able to retrieve archived contacts rather than get returned a HTTP 404</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Option for paged invoices with line item details </p>
+<hr/><a name="2.42"></a></p>
+<h3>Version 2.42</h3>
+<p>Date: Feb 26, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. PUT/POST BankTransfers (beta) &#8211; support for <a href="http://developer.xero.com/documentation/api/bank-transfers">creating bank transfers</a> via the API</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Paging on Invoices</p>
+<hr/><a name="2.41"></a></p>
+<h3>Version 2.41</h3>
+<p>Date: Feb 20, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. PUT Accounts &#8211; support for <a href="http://developer.xero.com/documentation/api/accounts/#title2">creating bank accounts</a> via the API</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. GET Contacts &#8211; bill payment terms showing correct payment terms</p>
+<p>2. Ensuring a HTTP 401 code is returned when trying to the <a href="http://developer.xero.com/documentation/api/reports/#title2"?Reports endpoint</a> with the new &#8220;No Reports&#8221; user role. Was returning a 403 in error.</p>
+<p><strong>What’s next?</strong></p>
+<p>1. Bank Transfers &#8211; support for creating bank transfers</p>
+<hr/><a name="2.40"></a></p>
+<h3>Version 2.40</h3>
+<p>Date: Feb 17, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. GET Reports &#8211; <a href="http://help.xero.com/#Standard$NoReports">new standard user role without report access</a> is enforced for API calls</p>
+<p><strong>What’s next?</strong></p>
+<p>1. PUT Accounts &#8211; support for creating bank accounts via the API</p>
+<hr/><a name="2.39.1"></a></p>
+<h3>Version 2.39.1</h3>
+<p>Date: Feb 5, 2014</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolves an issue with performance of GET BankTransactions</p>
+<p><strong>What’s next?</strong></p>
+<p>Accounts – add support for creating bank accounts</p>
+<hr/><a name="2.39"></a></p>
+<h3>Version 2.39</h3>
+<p>Date: Feb 4, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. BankTransactions : <a href="http://developer.xero.com/documentation/api/banktransactions/#title7">create prepayments and overpayments</a></p>
+<p><strong>What’s next?</strong></p>
+<p>Accounts – add support for creating bank accounts</p>
+<hr/><a name="2.38"></a></p>
+<h3>Version 2.38</h3>
+<p>Date: Jan 27, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/expense-claims/">Expense Claims</a> &#8211; PaymentDueDate and ReportingDate elements are now returned on GET ExpenseClaims<br />
+2. Payments element now returned when retrieving individual <a href="http://developer.xero.com/documentation/api/expense-claims/#title7">Expense Claim</a><br />
+3. My Applications &#8211; added support for <a href="http://developer.xero.com/documentation/getting-started/public-applications/#title5">multiple call back domains</a></strong></p>
+<p><strong>What’s next?</strong></p>
+<p>Accounts – add support for creating bank accounts</p>
+<hr/><a name="2.37"></a></p>
+<h3>Version 2.37</h3>
+<p>Date: Jan 16, 2014</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/contacts/#title6">Contacts</a> &#8211; ability to add additional contact people for a contact record<br />
+2. <a href="http://developer.xero.com/documentation/api/banktransactions/#title7">BankTransactions</a> &#8211; ability to mark transactions as reconciled</p>
+<p><strong>What’s next?</strong></p>
+<p>Accounts – add support for creating bank accounts</p>
+<hr/><a name="2.36"></a></p>
+<h3>Version 2.36</h3>
+<p>Date: Dec 12, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. PUT Accounts (beta) – The <a href="http://developer.xero.com/documentation/api/accounts/">Accounts</a> endpoint now has support for creating standard accounts</p>
+<p><strong>What’s next?</strong></p>
+<p>Accounts – add support for creating bank accounts</p>
+<hr/><a name="2.35"></a></p>
+<h3>Version 2.35</h3>
+<p>Date: Nov 21, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. PUT TaxRates &#8211; The <a href="http://developer.xero.com/documentation/api/tax-rates/">TaxRates</a> endpoint now supports creating new tax rates</p>
+<p><strong>What&#8217;s next?</strong></p>
+<p>Accounts &#8211; add support for creating new accounts</p>
+<hr/><a name="2.34"></a></p>
+<h3>Version 2.34</h3>
+<p>Date: Nov 14, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/reports/#title4">1099 Reports</a> for US users can now be retrieved for prior years. </p>
+<p><strong>Bug fixes</strong></p>
+<p>1. POST Attachments &#8211; add support for capitalised file extensions e.g. filename.PDF is now supported</p>
+<p><strong>What’s next?</strong></p>
+<p>TaxRates &#8211; ability to create new tax rates</p>
+<hr/><a name="2.33"></a></p>
+<h3>Version 2.33</h3>
+<p>Date: Nov 11, 2013</p>
+<p><strong>New features</strong></p>
+<p>1. POST/PUT ManualJournals &#8211; manual journals with more than 100 line items are now supported<br />
+2. <a href="http://developer.xero.com/documentation/api/tax-rates/">GET TaxRates</a> &#8211; full details of single tax component tax rates are now shown<br />
+3. GET Reports &#8211; updates to return <a href="http://blog.xero.com/2013/09/updated-gst-return-for-new-zealand/">finalised GST Reports</a> in addition to the existing published reports for NZ organisations.</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. POST/PUT ManualJournals &#8211; totals in the Xero UI for tax inclusive manual journals generated via the API are now showing correctly.<br />
+2. GET xxxx/Attachments &#8211; port number has been removed from the Url element value</p>
+<p><strong>What’s next?</strong></p>
+<p>1099 Report &#8211; ability to view prior year reports</p>
+<hr/><a name="2.32"></a></p>
+<h3>Version 2.32</h3>
+<p>Date: October 31, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/invoices/#title4">POST/PUT Invoices</a> &#8211; added support for discounts on line items for Sales (ACCREC) invoices</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. GET BankTransactions &#8211; issue filtering by contact name is resolved<br />
+2. GET ExpenseClaims &#8211; account codes now shown on line items for receipts on individual expense claims</p>
+<p><strong>What’s next?</strong></p>
+<p>Updates to POST/PUT BankTransactions to support creating overpayments, prepayments and transfers</p>
+<hr/><a name="2.31.1"></a></p>
+<h3>Version 2.31.1</h3>
+<p>Date: October 22, 2013</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolves an issue with JSON dates not formatting the same way as previous versions.</p>
+<p><strong>What’s next?</strong><br />
+Support for discounts on line items</p>
+<hr/><a name="2.31"></a></p>
+<h3>Version 2.31</h3>
+<p>Date: October 21, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/documentation/api/attachments/">Attachments</a> – improved support with multiple attachments on ACCREC, ACCPAY and RECEIPTS. All popular file types now supported.</p>
+<p><strong>What’s next?</strong><br />
+Support for discounts on line items</p>
+<hr/><a name="2.30"></a></p>
+<h3>Version 2.30</h3>
+<p>Date: September 26, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. GET Contacts &#8211; <a href="http://developer.xero.com/documentation/api/contacts/#GET">optional paging of results</a></p>
+<p><strong>What’s next? </strong><br />
+Support for discounts on line items</p>
+<hr/><a name="2.29"></a></p>
+<h3>Version 2.29</h3>
+<p>Date: September 17, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Details of transfers, prepayments and overpayments are now returned for <a href="http://developer.xero.com/documentation/api/banktransactions/">GET BankTransactions</a>. The ability to POST these will come in a future update.</p>
+<p><strong>Bug fixes</strong><br />
+1. Resolves an issue with filtering GET TrackingCategories</p>
+<p><strong>What’s next?</strong><br />
+Paging for contacts, adding support for discounts on PUT/POST invoices</p>
+<hr/><a name="2.28"></a></p>
+<h3>Version 2.28</h3>
+<p>Date: September 12, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. You can now create part or full refunds for credit notes via the <a href="http://developer.xero.com/documentation/api/payments/">Payments</a> endpoint</p>
+<p><strong>Bug fixes</strong><br />
+1. Contacts created via the API now strip out double white spaces to be consistent with the Xero App<br />
+2. Resolves an issue with updating manual journals that used inclusive amounts</p>
+<p><strong>What’s next?</strong></p>
+<p>BankTransactions improvements, adding support for discounts on PUT/POST invoices</p>
+<hr/><a name="2.27.1"></a></p>
+<h3>Version 2.27.1</h3>
+<p>Date: September 3, 2013</p>
+<p><strong>Bug fixes</strong><br />
+1. Fix for contacts not found to return HTTP 404&#8217;s</p>
+<hr/><a name="2.27"></a></p>
+<h3>Version 2.27</h3>
+<p>Date: September 2, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Tax rate components for custom defined tax rates are now retrievable &#8211; see <a href="http://developer.xero.com/documentation/api/Tax%20Rates/">GET Tax Rates</a><br />
+2.  Default payment terms for an organisation are now retrievable &#8211; see <a href="http://developer.xero.com/documentation/api/organisation/">GET Organisation</a><br />
+3. The Profit and Loss and Balance Sheet reports can now be retrieved using the standard layout rather than a customised user specific version &#8211; see <a href="http://developer.xero.com/documentation/api/reports/#title26">Profit and Loss Report</a> and <a href="http://developer.xero.com/documentation/api/reports/#title12">Balance sheet Report</a><br />
+4. More details on contacts are now returned when retrieving individual contacts &#8211; see <a href="http://developer.xero.com/documentation/api/contacts">Contacts</a><br />
+5. Contact balances are now returned for individual contacts &#8211; see <a href="http://developer.xero.com/documentation/api/contacts">Contacts</a><br />
+6. The ExpectedPaymentDate is now returned when retrieving a specific sales invoice if this value has been set. Populating this element via the API will be available in a future release. See <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a><br />
+7. The PlannedPaymentDate is now returned when retrieving a specific bill. Populating this element via the API will be available in a future release. See <a href="http://developer.xero.com/documentation/api/invoices">Invoices</a></p>
+<p><strong>Bug fixes</strong><br />
+1. Fix for some errors in API History showing as 5xx&#8217;s as well as 400&#8217;s.</p>
+<p><strong>What’s next?</strong></p>
+<p>Credit Note refunds, bank transaction improvements</p>
+<hr/><a name="2.26"></a></p>
+<h3>Version  2.26</h3>
+<p>Date: August 22, 2013</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. Resolve issues with rendering PDFs when using custom doc x templates<br />
+2. Resolve stability issues with retrieving PDFs of invoices<br />
+3. Resolve bug with deleting application in some browsers</p>
+<p>What’s next?</p>
+<p>Reports, contacts &#038; invoice improvements</p>
+<hr/><a name="2.25.2"></a></p>
+<h3>Version  2.25.2</h3>
+<p>Date: May 28, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Public release of the <a href="http://developer.xero.com/documentation/payroll-api/overview/" title="Overview">Xero Payroll API</a></p>
+<p>What’s next?</p>
+<p>Credit Note refunds, report improvements, bank transaction improvements</p>
+<hr/><a name="2.24"></a></p>
+<h3>Version 2.24.4084</h3>
+<p>Date: May 2, 2013</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. JSON response for GET Invoices were returning the LineAmountType value as an integer rather than a string. Such that the integers [0,1,2] are being returned in place of [NoTax, Inclusive, Exclusive]</p>
+<p>2. Payments were being accepted for accounts that didn&#8217;t have &#8220;payments enabled&#8221;</p>
+<p>3. GET CreditNotes &#8211; credit note not found are now returning a HTTP 404 rather than a HTTP 400 exception</p>
+<hr/><a name="2.24"></a></p>
+<h3>Version 2.24</h3>
+<p>Date: Apr 23, 2013</p>
+<p><strong>Bug fixes</strong></p>
+<p>1. GET Organisation returning address details &#8211; issue not returning addresses is resolved</p>
+<p>2. GET CreditNotes &#8211; credit notes not found were returning HTTP 500&#8217;s in error </p>
+<p>3. API Previewer &#8211; offset parameter issue for journals is resolved</p>
+<p>What&#8217;s next?</p>
+<p>1. Payroll API</p>
+<hr/><a name="2.23"></a></p>
+<h3>Version 2.23</h3>
+<p>Date: Mar 25, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Apply credit notes to invoices<br />
+You can now allocate part or full amounts of credit notes to outstanding invoices. See <a href="../api/Credit-Notes">Credit Notes</a></p>
+<p>2. More details on GET CreditNotes<br />
+When retrieving credit notes you can now see details of all allocations to invoices. See <a href="../api/Credit-Notes#GET">Credit Notes</a></p>
+<p>3. Support for Australian Tax Rate changes. <a href="http://developer.xero.com/changes-to-tax-codes-in-australia/">Learn more</a></p>
+<p>What&#8217;s next?</p>
+<p>1. Payroll API</p>
+<hr/><a name="2.22"></a></p>
+<h3>Version 2.22</h3>
+<p>Date: Mar 11, 2013</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Get Organisation improvements</p>
+<ul>
+<li>a shortcode for identifying an organisation is now shown</li>
+<li>address details for an organisation is now shown</li>
+</ul>
+<p>See <a href='http://developer.xero.com/api/Organisation'>Organisation</a> for more details  </p>
+<p>What&#8217;s next?</p>
+<p>1. Credit note improvements<br />
+2. Payroll API </p>
+<hr/><a name="2.20"></a></p>
+<h3>Version 2.20</h3>
+<p>Date: Dec 10, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. <a href="http://developer.xero.com/api/reports/#1099Report">1099 report</a> for US Users</p>
+<p>What’s next?</p>
+<p>1. Credit note improvements</p>
+<hr/><a name="2.19"></a></p>
+<h3>Version 2.19</h3>
+<p>Date: Oct 30, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. The <a href="http://developer.xero.com/api/reports/#ProfitAndLoss">Profit and Loss report</a> now allows you to filter by a tracking category</p>
+<p>2. The <a href="http://developer.xero.com/api/reports/#BalanceSheet">Balance Sheet report</a> now allows you to filter by tracking category options</p>
+<p><strong>Other changes and bug fixes</strong></p>
+<p>OAuth signatures now support both the OAuth 1.0a and 1.0 final spec (1.0 final spec has a change for PUT requests)</p>
+<p>Filenames are now correctly showing when attachments on invoices and receipts have spaces</p>
+<p>What&#8217;s next?</p>
+<p>1. 1099 Report for US users</p>
+<hr/><a name="2.174"></a></p>
+<h3>Version 2.174</h3>
+<p>Date: Oct 11, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Mark invoices as been sent to a contact</p>
+<p>If you send invoices via another system you can now reflect this by marking approved invoices as sent using the &#8220;SentToContact&#8221; element</p>
+<p>See <a href="../Invoices/">Invoices</a> for more details</p>
+<p><strong>Other changes</strong></p>
+<p>2. Private API Application creation limits</p>
+<p>We have decided to implement a limit to the number of private API applications that can be connected to a Xero organisation. This limit is 2 applications per Xero organisation.</p>
+<p>This has been put in place to ensure the stability of the Xero API &#8211; in some limited circumstances, we have noticed developers creating multiple API application instances to bypass our rate limits, particularly in cases where they are making inefficient use of the API and do not wish to change their practices.</p>
+<p>Note that we have placed this limit on a per organisation basis &#8211; a developer with access to 4 different Xero organisations could create 8 applications &#8211; 2 for each organisation (provided nobody else has created private API applications already tied to these organisations).</p>
+<p>What&#8217;s next?</p>
+<p>1. Reports by tracking category</p>
+<hr/><a name="2.17"></a></p>
+<h3>Version 2.17</h3>
+<p>Date: Sept 19, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. XML File Import for Conversions</p>
+<p>A developer preview of a <a href="http://developer.xero.com/api-overview/xml-file-import/">conversion file import tool</a> is now available. This can be used to populate a chart of accounts, organisation settings and mark the setup guide as completed.</p>
+<p>Learn more about <a href="http://developer.xero.com/api-overview/xero-conversions-import-service/">conversion tools and services</a></p>
+<p>What&#8217;s next?</p>
+<p>1. Mark invoices as been sent to a contact<br />
+2. Retrieving ExpectedPaymentDate on Accounts Receivable invoices</p>
+<hr/><a name="2.16"></a></p>
+<h3>Version 2.16</h3>
+<p>Date : July 16, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Attachments for Accounts Payables</p>
+<p>In the same way that you can add attachments for receipts, you can now do this for Accounts Payable invoices. All the usual file formats (jpg,png,gif and pdf) are supported</p>
+<p>See <a href="../api/attachments">Attachments</a> for more details</p>
+<p><strong>Bug Fixes</strong></p>
+<p>1. Fix for not being able to void approved invoices that contain description only lines or a zero invoice total</p>
+<p>What&#8217;s next ?</p>
+<ol>
+<li><a href="http://developer.xero.com/api-overview/xero-conversions-import-service/#fileimport">XML File Import for Conversions</a></li>
+</ol>
+<hr/><a name="2.15.39"></a></p>
+<h3>Version 2.15.39</h3>
+<p>Date : May 14, 2012</p>
+<p><strong>Bug Fixes</strong></p>
+<ol>
+<li>Rounding issue on Manual Journals &#8211; A rounding calculation on manual journals validation was preventing the entry of Manual Journals in certain circumstances.</li>
+<li>GET Journals: Offset not returning all journals with identical timestamps &#8211; A condition existed within the current GET Journals function where one or more Journals may not be returned if the CreatedDateUTC is identical to another Journal within that Xero organisation.</li>
+<li>PUT / POST Invoices: Comment only lines &#8211; on POST Invoices, comment line items consisting ofelement only were throwing validation errors for invoices with LineAmountTypes = Inclusive OR NoTax &amp; status is above DRAFT (SUBMITTED, AUTHORISED).</li>
+</ol>
+<p>What features are next ?</p>
+<ol>
+<li>Support for attachments on Accounts Payable invoices</li>
+<li>Mark invoices as been sent to a contact</li>
+</ol>
+<hr/><a name="2.15"></a></p>
+<h3>Version 2.15</h3>
+<p>Date : April 17, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1.Manual Journals</p>
+<p>You can now enter &#8220;POSTED&#8221; Manual Journals in addition to &#8216;DRAFT&#8217; ManualJournals. There is also a new element to specify whether a manual journal should be shown on cash basis reports. We’ve also added support for URL links on manual journals via the Xero API so you can add a convenient link back to the relevant source data in your system &#8211; just like you can with invoices. Note that the code to display URLs within the main Xero application is yet to be deployed, so these links will only be visible after our next main application release.</p>
+<p>See <a href="../api/manual-journals">Manual Journals</a> for more details.</p>
+<p>2. Status Codes</p>
+<p>If you exceed the Xero API rate limits the HTTP Status code returned is now a 503. This change was omitted in our previous release notes.</p>
+<p>See <a href="api-overview/xero-api-limits/">Rate Limits</a> for more details.</p>
+<p>Bug Fixes</p>
+<p>1. Support for description only line items on invoices with any supported LineAmountType (i.e. Exclusive,Inclusive,NoTax). Previously this was not working for Inclusive invoices</p>
+<p>What&#8217;s next ?</p>
+<ol>
+<li>Support for attachments on Accounts Payable invoices</li>
+<li>Mark invoices as been sent to a contact</li>
+</ol>
+<hr/><a name="2.14"></a></p>
+<h3>Version 2.14</h3>
+<p>Date : 20 February, 2012</p>
+<p><strong>New features and improvements</strong></p>
+<p>1.Where filters</p>
+<p>Response times have improved when you use the &#8216;where&#8217; parameter in your API calls to retrieve invoices and contacts. See our <a href="http://developer.xero.com/api-overview/http-requests-and-responses/#get-filtered">examples</a> of the most common scenarios for applying these filters.</p>
+<p>2. Discounts</p>
+<p>You may have seen that the main Xero application released line item discount functionality today. In order to ensure discounts applied to invoices created in Xero are correctly displayed via the API, we have released some changes to support discounts on <a href="Invoices">GET Invoices</a> only. We will be adding support for add discounts to invoice lines via the API (PUT, POST Invoices) in the not too distant future.</p>
+<p>3. Account codes for receipts</p>
+<p>A new element &#8220;ShowInExpenseClaims&#8221; has been added to the response for <a href="Accounts">GET Accounts</a>. This lets you see which account codes are available for use with expense claim receipts. The value for this element is a boolean e.g.true</p>
+<p><strong>Bug Fixes</strong></p>
+<p>1. Fix for &#8216;order&#8217; clause which was not always worked as expected.<br />
+2. All invoice data for Demo companies is now returned &#8211; some invoices were missing with non NZ demo companies.<br />
+3. Fix for retrieving journals when organisation has more than 32,000 journals</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<ol>
+<li>Approved manual journals</li>
+<li>Application permissions</li>
+<li>Full support for discounts</li>
+</ol>
+<hr/><a name="2.13"></a></p>
+<h3>Version 2.13</h3>
+<p>Date : 19 December, 2011</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Get list of users<br />
+The <a href="http://developer.xero.com/api/Users/">Users</a> endpoint lets you get a list of the users for an organisation.</p>
+<p>2. Enter receipts<br />
+You can now enter draft receipts for a user. You can also attach images to the receipts. See <a href="http://developer.xero.com/api/Receipts/">Receipts</a> for more details.</p>
+<p>3. Enter expense claims<br />
+Once you&#8217;ve entered some receipts you can now also submit these as part of an <a href="http://developer.xero.com/api/Expense-Claims/">Expense claim</a> for a user.</p>
+<p>4. Australian Business Activity Statement Report<br />
+You can now retrieve published BAS Reports for Australian organisations via the <a href="http://developer.xero.com/api/Reports#BASReport">Reports</a> endpoint.</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<ol>
+<li>Performance Improvements</li>
+<li>Approved Journals</li>
+</ol>
+<hr/><a name="2.12.127"></a></p>
+<h3>Version 2.12.127</h3>
+<p>Date : 24 November, 2011</p>
+<p><strong>Bugfix: P&amp;L Report</strong><br />
+Since the main application release on 23/11/2011, the P&amp;L report endpoint was returning a 500 error response for some Xero organisations.</p>
+<p><strong>Bugfix: Budget Summary Report</strong><br />
+The budget summary report was not responding to provided querystring parameters and was displaying the default budget summary timeframe.</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<ol>
+<li>Expense Claims</li>
+<li>Performance improvements &amp; AP invoice file attachments</li>
+<li>Approved manual journals</li>
+</ol>
+<hr/><a name="2.12"></a></p>
+<h3>Version 2.12</h3>
+<p>Date : 08 November, 2011</p>
+<p><strong>New Reports Endpoint</strong><br />
+We have released a new report endpoint which is currently in closed private beta for Australian organisations.<br />
+This will be documented in a future release.</p>
+<p><strong>Bugfix: Invoice LineAmountTypes of NoTax</strong><br />
+When specifying a LineAmountTypes of No tax, the line items were returning an incorrect TaxType of the default tax type for that account, though at 0% rate.<br />
+There was no net effect to this issue, other than a minor effect to the layout of PDF invoices generated with this condition.</p>
+<p>A validation warning is now raised for inconsistencies between document TaxType and LineAmountType.</p>
+<hr/><a name="2.11"></a></p>
+<h3>Version 2.11</h3>
+<p>Date : 2 August, 2011</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Enter bank transactions<br />
+You can now enter Spend Money and Receive Money transactions. You need to meet all the validation requirements for<br />
+this type of transaction. As per the Xero app there is no draft or submitted status for bank transactions. See <a href="http://developer.xero.com/api/BankTransactions/">Bank Transactions</a> for more details.</p>
+<p>2. GET Accounts now includes a Class element which is helpful when fetching a subset of accounts to show in your application. e.g. ASSET, EXPENSES</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<p>1. Expense Claims</p>
+<hr/><a name="2.09"></a></p>
+<h3>Version 2.09</h3>
+<p>Date : 14 June, 2011</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Approved Invoices &amp; Credit Notes<br />
+You can now enter approved invoices and credit notes using the &#8220;AUTHORISED&#8221; status. Once an invoice has the AUTHORISED status you can apply payments to it in a subsequent API call.</p>
+<p>You can now change the status of DRAFT or SUBMITTED invoices to be approved using the &#8220;AUTHORISED&#8221; status. Many users may still want to have invoices entered in Xero as drafts so consider giving your customers a choice of how their invoices get entered into Xero. Xero&#8217;s validation requirements for entering approved invoices and credit notes is stricter than that for entering drafts or submitted invoices. For example, you need to ensure that you include valid account codes for every line item.</p>
+<p>We&#8217;ve now created a separate request on our <a href="http://xero.uservoice.com/forums/5528-xero-api">Uservoice</a> site for being able to trigger an email to send these invoices. We&#8217;ll closely monitor how much demand there is for this. If you are looking to enter many invoices in a single call then we recommend you make use of our enhanced error messaging for individual invoices by appending &#8220;summarizeErrors=false&#8221; to the end of your API calls. e.g. POST /api.xro/2.0/Invoices?summarizeErrors=false. See <a href="http://developer.xero.com/api/Invoices/">Invoices</a> for more details.</p>
+<p>2. Void &amp; Delete Invoices and Credit Notes<br />
+You can now void approved invoices that have had no payments made against them and you can delete draft or submitted invoices. The status codes for these are &#8220;DELETED&#8221; and &#8220;VOIDED&#8221;. See Invoices for more details</p>
+<p>3. You can now enter invoice lines with just a description e.g. no unit price or quantity will show on the invoice.</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<p>1. Bank Transactions (Spend and Receive Money)<br />
+2. Expense Claims</p>
+<hr/><a name="2.08"></a></p>
+<h3>Version 2.08</h3>
+<p>Date : 23 May, 2011</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Employees<br />
+You can now create,update and retrieve basic employee details via the Xero API. Additionally you can now create hyperlinks to the details of employees stored in other systems.</p>
+<p>2. Payments &#8211; support for non base currency.<br />
+You can now specify the exchange rate for payments applied to invoices in currencies other than your base currency. When you call GET Invoices for invoices raised in currencies other than your base currency a CurrencyRate element will now be included in the response. We&#8217;ve also added GET Payments as an alternate way to get invoice and credit note payments.</p>
+<p>3. Organisation details<br />
+More details are now returned including end of financial year dates, lock dates, tax number, registration number and organisation creation date</p>
+<p>4. Entering data in bulk<br />
+We&#8217;ve improved our validation of bulk API calls so entering many invoices in a single API call is now a lot easier e.g. if any invoices in the middle of a batch fail Xero&#8217;s validation then the correct responses are still returned for the successful invoices and you can see the validation error for each invoice that failed. All our endpoints have been upgraded with this improved validation. The new response messages for validating bulk API calls would mean a breaking change so to utilise this functionality you&#8217;ll need to append ?SummarizeErrors=false to the end of your API calls e.g. POST /api.xro/2.0/Invoices?SummarizeErrors=false.</p>
+<p>5. Email sent<br />
+GET Invoices and GET CreditNotes now indicate when an invoice or credit note has been emailed to a customer.</p>
+<p>6. Credit notes applied to invoices, reporting codes<br />
+These items were left out of our previous release notes. Any credit notes applied to an invoice are now returned in more detail when using GET Invoices. Reporting codes are returned on GET Accounts for New Zealand based organisations.</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<p>1. Approving invoices<br />
+This work is close to completion but needs some more polish and testing before release. We expect to release this in June 2011. At this stage the scope of this work is limited to allowing you to enter approved invoices and not trigger the sending of invoices via email. In this release we have improved how our invoice validation works and now have an option to get more detailed responses when entering many invoices in a single API call. This was a pre-requisite to the enabling of approved invoices. Stay tuned for more details on this.</p>
+<hr/><a name="2.07"></a></p>
+<h3>Version 2.07</h3>
+<p>Date : 23 March, 2011</p>
+<p><strong>New features and improvements</strong></p>
+<p>1. Reporting APIs</p>
+<p>Xero’s most commonly viewed reports (listed below) can now be retrieved using the Xero API.</p>
+<p>Aged Payables By Contact<br />
+Aged Receivables By Contact<br />
+Balance Sheet<br />
+Bank Statement<br />
+Bank Summary<br />
+Budget Summary<br />
+Executive Summary<br />
+GST Report (New Zealand organisations only)<br />
+Profit and Loss<br />
+Trial Balance</p>
+<p>Try the <a href="https://api.xero.com/Previewer">API Previewer</a> to explore these reports or read our <a href="http://developer.xero.com/api/Reports">API Reference</a> for more details.</p>
+<p>2. Bug Fixes<br />
+&#8211; Partner applications now show correctly in Xero Network settings</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<p>1. Approving invoices<br />
+2. Entering spend and receive Money transactions</p>
+<hr/><a name="2.06"></a></p>
+<h3>Version 2.06</h3>
+<p>Date: 14 February, 2011</p>
+<p><strong>New Features and improvements</strong></p>
+<ol>
+<ol>
+<li>JSON support</li>
+</ol>
+</ol>
+<p>Retrieve API responses from all endpoint in <a href="http://developer.xero.com/api-overview/http-requests-and-responses/">JSON </a> format rather than XML. Try the <a href="https://api.xero.com/Previewer">API Previewer</a> to see examples of the response format.</p>
+<ol>
+<ol>
+<li>Manual Journals &#8211; enter draft <a href="http://developer.xero.com/api/Manual-Journals">manual journals</a></li>
+<li>Items &#8211; add and update <a href="http://developer.xero.com/api/Items">inventory items</a></li>
+<li>Invoices &amp; Credit Notes &#8211; add item codes to <a href="http://developer.xero.com/api/invoices/">invoices</a> and <a href="http://developer.xero.com/api/credit-notes/"> credit notes</a> to utilise prices and descriptions. You can also override any details of the items on individual invoices</li>
+<li>Retrieve PDF version of invoices in Xero (includes the branding themes that have been setup in Xero)<br />
+see <a href="http://developer.xero.com/api/Invoices#GET">Invoices</a> and <a href="http://developer.xero.com/api/credit-notes/#GET">Credit Notes</a> for more details.</li>
+<li>Payments &#8211; you can now specify the <a href="http://developer.xero.com/api/Payments/">reference </a> field when adding payments</li>
+</ol>
+</ol>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<ol>
+<ol>
+<ul>
+<li>Reporting APIs &#8211; we&#8217;re busy working with our <a href="http://blog.xero.com/2011/02/super-charged-reporting/">beta testers</a> to finalise this release. A public release will be available shortly.</li>
+<li>Approving invoices</li>
+<li>Entering spend and receive money transactions</li>
+</ul>
+</ol>
+</ol>
+<hr/><a name="2.05"></a></p>
+<h3>Version 2.05</h3>
+<p>Date: 15 December, 2010</p>
+<p><strong>New feature and improvements</strong></p>
+<ol>
+<ol>
+<ol>
+<li>Journals endpoint with ability to GET Journals</li>
+</ol>
+</ol>
+</ol>
+<p>This data is essentially the same as the data you can retrieve manually in Xero from the “Adviser &gt; Export GL Transactions” menu. See our <a href="../api/Journals">Journals</a> endpoint</p>
+<ol>
+<ol>
+<ol>
+<li>Invoice branding themes</li>
+</ol>
+</ol>
+</ol>
+<p>Branding themes can now be applied to invoices created via our API.</p>
+<p>We&#8217;ve added a BrandingTheme endpoint so you can retreive a list of branding themes an organisation is using. To apply a branding theme to an invoice you can include the BrandingThemeID element. See our updated <a href="../api/Invoices">Invoices</a> endpoint documentation for more details.</p>
+<p>If a BrandingThemeID is not specified on an invoice Xero will use the default branding theme for an organisation.</p>
+<ol>
+<ol>
+<ol>
+<li>Invoice URL links</li>
+</ol>
+</ol>
+</ol>
+<p>You can now add URL links to invoices. If a URL link is specified, Xero will show a &#8220;view invoice in [app name]&#8221; link at the top of invoice.</p>
+<p>To add these links you just need to add a URL element to your APi call. See our updated <a href="../api/Invoices">Invoices</a> endpoint documentation for more details.</p>
+<ol>
+<ol>
+<ol>
+<li>API Rate Limiting</li>
+</ol>
+</ol>
+</ol>
+<p>We&#8217;ve introduced a daily limit of 1000 API calls that a provider can make against a particular Xero organisation in a rolling 24 hour period. If you exceed this rate limit you will receive a HTTP 401 response. This limit is in addition to the 60 calls per minute per provider that is currently in place. The daily limit response message will look like the following.</p>
+<p>oauth_problem=rate%20limit%20exceeded&amp;oauth_problem_advice=please%20wait%20befor<br />
+e%20retrying%20the%20xero%20api</p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<ol>
+<ol>
+<ul>
+<li>Manual Journals &#8211; the ability to post draft manual journals.</li>
+<li>Reporting APIs &#8211; In Q1 2011 we’ll be releasing the first of our reporting endpoints. Cashflow and other speciaist reporting or analysis apps will be able to easily access a growing range of data from Xero. Our team is really excited at the possibilities this will open up to developers.</li>
+</ul>
+</ol>
+</ol>
+<hr/><a name="2.03"></a></p>
+<h3>Version 2.03</h3>
+<p>Date: 29 March, 2010</p>
+<p><strong>New feature and improvements</strong></p>
+<ol>
+<ol>
+<ol>
+<li>Support for private applications</li>
+</ol>
+</ol>
+</ol>
+<p>Private apps use 2 legged OAuth and bypass the user authorisation workflow in the standard OAuth process. Private applications are linked to a single Xero organisation (chosen from a list of organisations you have standard user rights to).</p>
+<p>Please read our developer information about <a href="http://developer.xero.com/documentation/getting-started/private-applications/">setting up a private application</a></p>
+<ol>
+<ol>
+<ol>
+<li>Revoke access for applications</li>
+</ol>
+</ol>
+</ol>
+<p>You can now revoke access to API v2 applications from inside the Xero application.<br />
+Go to the Xero Network Settings page (Settings &gt; General Settings &gt; Xero Network) to see a list of applications that have access to your organisation &#8211; they are listed at the top of the screen. You can click &#8220;disconnect&#8221; to revoke access.</p>
+<p>Public applications still have access revoked automatically after 30 minutes of being authorised.</p>
+<p>Private applications can be reinstated by generating a new consumer key and consumer secret from the Edit screen in the developer portal.</p>
+<ol>
+<ol>
+<ol>
+<li>Callback urls for public applications</li>
+</ol>
+</ol>
+</ol>
+<p>You can now specify the oauth_callback parameter and redirect back to a different URL as long as it is still within your apps callback domain(you can now specify in your application settings in the developer portal). This is useful if you give your customers a unique subdomain to login to your application.</p>
+<ol>
+<ol>
+<ol>
+<li>Code samples</li>
+</ol>
+</ol>
+</ol>
+<p>We have some cody samples in Ruby &amp; .NET(coming soon) that you can use to get familiar with private apps. If you&#8217;d like to contribute code examples in other langauges please email them to <a href="mailto:network@xero.com">network@xero.com</a></p>
+<p><strong>What&#8217;s next on the roadmap?</strong></p>
+<p>• Support for <a href="http://developer.xero.com/documentation/getting-started/partner-applications/">Partner applications</a> is coming very soon. Partner apps are public applications that have been upgraded and given longer access to organisations without end users having to reauthorize access. This will enable Xero Network partners to use long term access tokens with single instance multi tenanted web applications.</p>
+<p>• add draft manual journals, add spend money, receive money &amp; transfer money transactions<br />
+• approve invoices via the API</p>
+<p><strong>Your feedback</strong><br />
+We are always trying to deliver the features you are asking for so keep the feedback coming &#8211; please <a href="http://xero.uservoice.com">vote</a> for what we should be working on next.</p>
+<p><strong>Xero Developer API v2 – Developer preview release</strong><br />
+Date : 8 September, 2009</p>
+<p><strong>New features and improvements</strong></p>
+<ol>
+<ol>
+<ol>
+<li>Authentication change to using OAuth only.
+<ul>
+<li>initial OAuth support &#8211; all access tokens that expire after 30 minutes</li>
+<li>longer term access tokens will be available soon – <a href="#longtermaccesstokens">see below</a> for more info</li>
+</ul>
+</li>
+<li>All API methods are now easier to use
+<ul>
+<li>ordering of top level XML elements now doesn&#8217;t matter</li>
+<li>we&#8217;ve reduced the number of required elements for many API methods</li>
+<li>you can now filter results returned</li>
+</ul>
+</li>
+<li>Better error messaging
+<ul>
+<li>required xml elements that are missing will be returned</li>
+<li>required element values that are missing will be returned</li>
+<li>error codes will be returned for validation errors</li>
+</ul>
+</li>
+<li>Easier to add invoices
+<ul>
+<li>tax values on line items are no longer required e.g. just specify description, unit price (exclusive or inclusive of tax) &amp; quantity</li>
+<li>if tax amounts are specified we expect an identical match to Xero calculations</li>
+<li>draft invoices can be updated</li>
+</ul>
+</li>
+<li>Add draft invoices in a foreign currency</li>
+<li>Add payments to approved invoices</li>
+<li>Add draft Credit Notes (standalone)</li>
+<li>API call throttling &#8211; max 60 calls per minute per API provider</li>
+<li>Getting started with the Xero API is now easier
+<ul>
+<li>No need to apply for an API key &#8211; just go to http://api.xero.com</li>
+<li>Anyone with a Xero user account can use our API previewer application to get familiar with our API and the user experience with using OAuth.</li>
+<li>There is no developer sandpit for API v2 &#8211; you can use your demo company as a sand pit Xero organisation during development.</li>
+<li>If you develop an application that suits expiring tokens then you don&#8217;t need to have your application approved. We still recommend you run a pilot before you go live.</li>
+</ul>
+</li>
+</ol>
+</ol>
+</ol>
+<p><strong>Why is this titled a developer preview release?</strong></p>
+<p>This is not a feature complete release. We thought it would be useful to give you access to our latest stable build of v2 so you can start getting familiar with the new features and using OAuth if this is new to you.</p>
+<p><a name="longtermaccesstokens"></a>In this preview release all OAuth tokens will expire after 30 minutes. We are working hard to make non expiring token support available as soon as we can and realise many of our Xero network partners and 3rd party developers will need this before migrating from v1. When we introduce this option for developers we’ll also have a mechanism within Xero to allow users to revoke access for any active access tokens.</p>
+<p>Examples of applications that need longer term tokens include:</p>
+<ol>
+<ol>
+<ul>
+<li>server scripts that run as scheduled tasks to create draft invoices, sync contacts</li>
+<li>integrations that use the Xero API after a trigger (e.g. after a sale on your e-commerce site or an update of a contact in your CRM system</li>
+<li>online solutions that want to offer a &#8220;set and forget&#8221; approach to integration with Xero</li>
+</ul>
+</ol>
+</ol>
+<p>We&#8217;re working hard to squash any remaining critical bugs over the coming weeks. Please let us know if have any issues &#8211; just drop a quick note to <a href="mailto:network@xero.com">network@xero.com</a>.</p>
+<p><strong>Getting started with API v2</strong></p>
+<p>Visit our API preview site <a href="http://api.xero.com">http://api.xero.com</a> to get familiar with the new features and changes.</p>
+<p><strong>FAQ&#8217;s</strong></p>
+<p><strong>Why did we choose to go with OAuth?</strong><br />
+What we think is great about OAuth is the improvement in user experience – users no longer have to go through the steps to generate a customer key in Xero and then paste this into a 3rd party application. Using OAuth we now have a suitable option to allow desktop and newly emerging device installed mobile applications to use our developer API as well.</p>
+<p><strong>Why do access tokens expire after 30 minutes by default?</strong><br />
+We take the duty of protecting our customer’s data very seriously. Desktop applications that connect to Xero using our developer API need to have a small access window so you can have a higher degree of certainty that your data cannot be accessed by others if your computer is comprised. The limit has been set at 30 minutes to be consistent with the session timeout in the Xero web application.</p>
+<p>As mentioned above we will soon have support for longer access tokens to developers that have web based applications or server scripts which have taken some extra steps to ensure access tokens are kept secure.</p>
+<p><strong>Isn&#8217;t OAuth adding a level of complexity that developers don&#8217;t need?</strong><br />
+Most popular development languages already have OAuth wrapper classes available that make using OAuth very straight forward. In many cases once you&#8217;ve included the OAuth libraries only a few lines of code is required to add OAuth support to your application. There is a bit of learning required to get your head around the OAuth terminology but it’s nothing major. We&#8217;ve included some links to some good sites to check out which include detailed explanations of the workflow with OAuth and also code examples.</p>
+<p><strong>What&#8217;s next on the roadmap?</strong><br />
+• Support for long term access tokens<br />
+• Bug fixes<br />
+• add draft manual journals via API</p>
+<p><strong>Your feedback</strong><br />
+We&#8217;ve been using <a href="http://xero.uservoice.com">Uservoice</a> for a while now to keep track of developer requests. If you&#8217;re not familiar with this &#8211; please go and have a look. This is a great way for us to know what you want us to build next and is also good way for you to see where your ideas rank amongst other developer&#8217;s requests. We are always trying to deliver the features you are asking for so keep the feedback coming.</p>
+</div>
+
+
+			      				    </div>
+			    </div>
+			  </div>
+			  <div class="resultFooter">
+					<span class="communityIcon"></span>Ask questions, get help in the <a href="https://community.xero.com/developer/" target="_blank">Xero Developer Community</a>
+			  </div>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="b-container">
+		<div class="b-row">
+		  <div class="span2">
+        <h5>DEVELOP</h5>
+        <ul>
+          <li><a href="/documentation/getting-started/getting-started-guide/">Getting Started</a></li>
+          <li><a href="/documentation/">Documentation</a></li>
+          <li><a href="/code-samples/libraries/overview/">SDKs</a></li>
+          <li><a href="https://app.xero.com/Previewer">API Previewer</a></li>
+          <li><a href="https://app.xero.com/Application">My Applications</a></li>
+          <li><a href="/become-a-partner/">Become a Partner</a></li>
+        </ul>
+      </div>
+      <div class="span2">
+        <h5>HELP</h5>
+        <ul>
+          <li><a href="https://community.xero.com/developer/">Community</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="span3">
+        <h5>API</h5>
+        <ul>
+          <li><a href="/documentation/api/v2-release-notes/">Release notes (Core)</a></li>
+          <li><a href="/documentation/payroll-api/release-notes/">Release notes (Payroll)</a></li>
+          <li><a href="http://status.developer.xero.com/" target="_blank">Status</a></li>
+          <li><a href="/feedback/">Give us feedback</a></li>
+        </ul>
+      </div>
+      <div class="span2 offset3">
+        <a href="https://www.xero.com/signup/" class="tryXero" >Try Xero for free</a>
+      </div>
+    </div>
+    <hr>
+    <div class="b-row">
+      <div class="span2">
+        <a class="twitter" href="https://twitter.com/xeroAPI/">@XeroAPI on Twitter</a>
+      </div>
+      <div class="span2">
+        <a class="twitter" href="http://www.xero.com/careers/">Xero is hiring!</a>
+      </div>
+      <div class="span2 offset5">
+        <a class="terms" href="/xero-developer-platform-terms-conditions/">Terms of use</a>
+      </div>
+      <div class="span1">
+        <a class="privacy" href="http://www.xero.com/about/privacy/">Privacy</a>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="https://plus.google.com/114409208399183961977" rel="publisher"></a>
+<script>var _wpcf7 = {"loaderUrl":"https:\/\/developer.xero.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};</script><script>var DavesWordPressLiveSearchConfig = {"resultsDirection":"down","showThumbs":"false","showExcerpt":"false","showMoreResultsLink":"true","minCharsToSearch":"1","xOffset":"-14","yOffset":"10","blogURL":"https:\/\/developer.xero.com","ajaxURL":"https:\/\/developer.xero.com\/wp-admin\/admin-ajax.php","viewMoreText":"View more results","outdatedJQuery":"Dave's WordPress Live Search requires jQuery 1.2.6 or higher. WordPress ships with current jQuery versions. But if you are seeing this message, it's likely that another plugin is including an earlier version.","resultTemplate":"<ul id=\"dwls_search_results\" class=\"search_results dwls_search_results\">\n<input type=\"hidden\" name=\"query\" value=\"<%- resultsSearchTerm %>\" \/>\n<% _.each(searchResults, function(searchResult, index, list) { %>\n        <%\n        \/\/ Thumbnails\n        if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) {\n                liClass = \"post_with_thumb\";\n        }\n        else {\n                liClass = \"\";\n        }\n        %>\n        <li class=\"daves-wordpress-live-search_result <%- liClass %> '\">\n        <% if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) { %>\n                <img src=\"<%= searchResult.attachment_thumbnail %>\" class=\"post_thumb\" \/>\n        <% } %>\n\n        <a href=\"<%= searchResult.permalink %>\" class=\"daves-wordpress-live-search_title\"><%= searchResult.post_title %><\/a>\n\n        <% if(searchResult.post_price !== undefined) { %>\n                <p class=\"price\"><%- searchResult.post_price %><\/p>\n        <% } %>\n\n        <% if(DavesWordPressLiveSearchConfig.showExcerpt == \"true\" && searchResult.post_excerpt) { %>\n                <p class=\"excerpt clearfix\"><%= searchResult.post_excerpt %><\/p>\n        <% } %>\n\n        <% if(e.displayPostMeta) { %>\n                <p class=\"meta clearfix daves-wordpress-live-search_author\" id=\"daves-wordpress-live-search_author\">Posted by <%- searchResult.post_author_nicename %><\/p><p id=\"daves-wordpress-live-search_date\" class=\"meta clearfix daves-wordpress-live-search_date\"><%- searchResult.post_date %><\/p>\n        <% } %>\n        <div class=\"clearfix\"><\/div><\/li>\n<% }); %>\n\n<% if(searchResults[0].show_more !== undefined && searchResults[0].show_more && DavesWordPressLiveSearchConfig.showMoreResultsLink == \"true\") { %>\n        <div class=\"clearfix search_footer\"><a href=\"<%= DavesWordPressLiveSearchConfig.blogURL %>\/?s=<%-  resultsSearchTerm %>\"><%- DavesWordPressLiveSearchConfig.viewMoreText %><\/a><\/div>\n<% } %>\n\n<\/ul>"};</script><script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-534b9ec6-9ae3bedb.js'></script>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/black-nav.js'></script>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-includes/js/wp-embed.min.js'></script>
+</body>
+</html>

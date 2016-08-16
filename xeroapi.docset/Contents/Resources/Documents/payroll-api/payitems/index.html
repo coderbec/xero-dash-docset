@@ -1,0 +1,887 @@
+<!DOCTYPE html><!--[if lte IE 7]><html class="ie7" lang="en"><![endif]--><!--[if IE 8]><html class="ie8" lang="en"><![endif]--><!--[if IE 9]><html class="ie9" lang="en"><![endif]--><!--[if !IE]><!--><html lang="en"><!--<![endif]--><head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="shortcut icon" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/favicon.ico?m=15032016" type="image/x-icon"/>
+	
+<!-- This site is optimized with the Yoast SEO plugin v3.2.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>PayItems - Xero API Developer Center</title>
+<meta name="description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero."/>
+<meta name="robots" content="index,nofollow,noodp"/>
+<link rel="canonical" href="https://developer.xero.com/documentation/payroll-api/payitems/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="PayItems - Xero API Developer Center"/>
+<meta property="og:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero."/>
+<meta property="og:url" content="https://developer.xero.com/documentation/payroll-api/payitems/"/>
+<meta property="og:site_name" content="Xero API Developer Center"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero."/>
+<meta name="twitter:title" content="PayItems - Xero API Developer Center"/>
+<meta name="twitter:site" content="@xeroAPI"/>
+<meta name="twitter:creator" content="@xeroAPI"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Feed" href="https://developer.xero.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Comments Feed" href="https://developer.xero.com/comments/feed/"/>
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/developer.xero.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="black-nav-css" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/css/black-nav.css" type="text/css" media="all"/>
+<link rel="stylesheet" id="minqueue-80a2dc04-54ce0cfd-css" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-80a2dc04-54ce0cfd.css" type="text/css" media="all"/>
+<script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-2ac824e9-f95de822.js"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/lib/html5shiv.js'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="https://developer.xero.com/wp-json/"/>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.xero.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://developer.xero.com/wp-includes/wlwmanifest.xml"/> 
+<link rel="shortlink" href="https://developer.xero.com/?p=35500"/>
+<link rel="alternate" type="application/json+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fdocumentation%2Fpayroll-api%2Fpayitems%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fdocumentation%2Fpayroll-api%2Fpayitems%2F&amp;format=xml"/>
+<style>.ssbl-wrap .ssbl-container .ssbl-img{width:50px;height:50px;padding:5px;border:0;box-shadow:0;display:inline}.ssbl-wrap .ssbl-container a{border:0}</style><link rel="stylesheet" id="minqueue-a0b326f9-4f2caace-css" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-a0b326f9-4f2caace.css" type="text/css" media="all"/>
+<style type="text/css">            ul.dwls_search_results {
+              width: 250px;
+            }
+            ul.dwls_search_results li {
+              color: #797979;
+              background-color: #ffffff;
+            }
+            .search_footer {
+              background-color: #f5f7f8;
+            }
+            .search_footer a,
+            .search_footer a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li a, ul.dwls_search_results li a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li:hover
+            {
+              background-color: ;
+            }
+            ul.dwls_search_results li {
+              border-bottom: 1px solid #e0e5e9;
+            }</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+
+	<link rel="stylesheet" href="https://edge.xero.com/style/xui/10.0.0/xui.min.css"/>
+
+</head>
+<body class="xui-body">
+
+      <div class="Notification js-notification">
+      <div class="b-container">
+        <div class="b-row">
+          <div class="span12">
+            <p id="x1237" class="xxxjs-notificationContent">Developer TV Episode 3 is out. Watch it <a href="https://www.youtube.com/watch?v=vpPWKwwyvkc" target="_blank" class="js-notificationAcknowledge">here!</a></p>
+            <button class="Notification-closeButton js-notificationCloseButton" type="button">
+              <span class="Notification-closeButtonText is-hidden">Close</span>
+              <svg class="Notification-closeButtonIcon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15zm-1.765-15L7.5 9.265 9.265 7.5 15 13.235 20.735 7.5 22.5 9.265 16.765 15l5.735 5.735-1.765 1.765L15 16.765 9.265 22.5 7.5 20.735 13.235 15z" fill-rule="evenodd"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+    <!-- rev 29a7f4b -->
+    <div id="devx-nav">
+
+        <div class="devx-logo">
+            <a href="">
+                <img src="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/developer-logo.svg" alt="Xero Developer" width="115" height="30" class="dev-logo"/>
+            </a>
+        </div>
+        <div class="devx-nav-tabs-left">
+            <ul>
+                <li class="devx-nav-block">
+                    <a href="documentation/" id="devx-page-docs" class="devx-nav-item devx-nav-link devx-nav-selected">Docs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="code-samples/" id="devx-page-sdks" class="devx-nav-item devx-nav-link ">SDKs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Preview/Organisation" id="devx-page-previewer" class="devx-nav-item devx-nav-link">Previewer</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Application" id="devx-page-myapps" class="devx-nav-item devx-nav-link">My Apps</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://community.xero.com/developer/" id="devx-page-community" class="devx-nav-item devx-nav-link">Community</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="partner/" id="devx-page-partner" class="devx-nav-item devx-nav-link ">Partner</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://devblog.xero.com/" id="devx-page-blog" class="devx-nav-item devx-nav-link ">Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="devx-nav-tabs-right">
+            <ul>
+                <li class="devx-nav-block" style="margin-right: 46px;">
+                    <a class="devx-nav-item devx-nav-help" id="devx-nav-help-icon"></a>
+
+                    <div class="xui-dropdownmenu xui-dropdownmenu xui-dropdownmenu-layout xui-dropdownmenu-right" role="menubar" aria-label="dropdown menu">
+                        <div class="xui-dropdownmenu--body">
+                            <ul class="xui-menugroup xui-menugroup-layout" role="menu" aria-label="Menu group 1 label">
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="faq/" id="dex-page-faqs" class="xui-menuitem--body">FAQs
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="true">
+                                    <a href="support/" id="dex-page-support" class="xui-menuitem--body">Support
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="https://status.developer.xero.com/" id="dex-page-apistatus" class="xui-menuitem--body">API Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="xui-input-wrapper">
+                        <svg class="xui-icon xui-input--icon-left"><use xlink:href="#xui-icon-search"></use></svg>
+                        <input class="xui-input devx-nav-search" type="search" placeholder="Search" aria-label="Search" id="devx-top-search"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="xui-icon-blob-holder"></div>
+    <script src="https://edge.xero.com/style/xui-icon/2.3.0/xuiIconBlobES5.js"></script>
+    <script type="text/javascript">
+        (function () { xuiIconBlobES5(document.getElementById('xui-icon-blob-holder')); })();
+    </script>
+
+	<div class="underHeader">
+		<div class="b-container">
+			<div class="b-row">
+				<div class="span12">
+					<div class="titleUnderHeader">
+						<h1>Documentation</h1>					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="pageWrapper">
+  <div class="b-container">
+	  <div class="b-row">
+			<div class="span3">
+				<div class="leftSideBar">
+	<ul class="pagesList">
+	<li class="page_item page-item-1600 page_item_has_children"><a href="https://developer.xero.com/documentation/getting-started/">Getting Started</a>
+<ul class="children">
+	<li class="page_item page-item-35556"><a href="https://developer.xero.com/documentation/getting-started/getting-started-guide/">Getting Started Guide</a></li>
+	<li class="page_item page-item-35823"><a href="https://developer.xero.com/documentation/getting-started/development-accounts/">Development accounts</a></li>
+	<li class="page_item page-item-26860"><a href="https://developer.xero.com/documentation/getting-started/api-application-types/">API Application Types</a></li>
+	<li class="page_item page-item-35725"><a href="https://developer.xero.com/documentation/getting-started/api-application-setup/">API Application Setup</a></li>
+	<li class="page_item page-item-33328"><a href="https://developer.xero.com/documentation/getting-started/private-applications/">Private Applications</a></li>
+	<li class="page_item page-item-33264"><a href="https://developer.xero.com/documentation/getting-started/public-applications/">Public Applications</a></li>
+	<li class="page_item page-item-33294"><a href="https://developer.xero.com/documentation/getting-started/partner-applications/">Partner Applications</a></li>
+	<li class="page_item page-item-33734"><a href="https://developer.xero.com/documentation/getting-started/http-requests-and-responses/">Requests and Responses</a></li>
+	<li class="page_item page-item-7917"><a href="https://developer.xero.com/documentation/getting-started/http-response-codes/">Response Codes</a></li>
+	<li class="page_item page-item-24421"><a href="https://developer.xero.com/documentation/getting-started/xero-api-limits/">API Limits</a></li>
+	<li class="page_item page-item-23070"><a href="https://developer.xero.com/documentation/getting-started/oauth-issues/">OAuth Issues</a></li>
+	<li class="page_item page-item-20611"><a href="https://developer.xero.com/documentation/getting-started/connect-to-xero-buttons/">Xero Connect Buttons</a></li>
+</ul>
+</li>
+<li class="page_item page-item-35553 page_item_has_children"><a href="https://developer.xero.com/documentation/advanced-docs/">Advanced Docs</a>
+<ul class="children">
+	<li class="page_item page-item-21135"><a href="https://developer.xero.com/documentation/advanced-docs/oauth-callback-domains-explained/">Callback Domains</a></li>
+	<li class="page_item page-item-34452"><a href="https://developer.xero.com/documentation/advanced-docs/dates-and-timestamps-explained/">Dates and Timestamps</a></li>
+	<li class="page_item page-item-36255"><a href="https://developer.xero.com/documentation/advanced-docs/deep-links/">Deep links</a></li>
+	<li class="page_item page-item-36177"><a href="https://developer.xero.com/documentation/advanced-docs/partner-app-entrust-certificate-instructions/">Entrust Certificates</a></li>
+	<li class="page_item page-item-33689"><a href="https://developer.xero.com/documentation/advanced-docs/using-partner-applications-with-iis/">Partner Applications &amp; IIS</a></li>
+	<li class="page_item page-item-30024"><a href="https://developer.xero.com/documentation/advanced-docs/rounding-in-xero/">Rounding in Xero</a></li>
+	<li class="page_item page-item-33420"><a href="https://developer.xero.com/documentation/advanced-docs/public-private-keypair/">Public/private key pair</a></li>
+</ul>
+</li>
+<li class="page_item page-item-1603 page_item_has_children"><a href="https://developer.xero.com/documentation/api/">Accounting API</a>
+<ul class="children">
+	<li class="page_item page-item-1608"><a href="https://developer.xero.com/documentation/api/api-overview/">Overview &ndash; Core</a></li>
+	<li class="page_item page-item-6866"><a href="https://developer.xero.com/documentation/api/v2-release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-23587"><a href="https://developer.xero.com/documentation/api/attachments/">Attachments</a></li>
+	<li class="page_item page-item-6708"><a href="https://developer.xero.com/documentation/api/accounts/">Accounts</a></li>
+	<li class="page_item page-item-27441"><a href="https://developer.xero.com/documentation/api/bankstatements/">Bank Statements</a></li>
+	<li class="page_item page-item-19124"><a href="https://developer.xero.com/documentation/api/banktransactions/">Bank Transactions</a></li>
+	<li class="page_item page-item-35866"><a href="https://developer.xero.com/documentation/api/bank-transfers/">Bank Transfers</a></li>
+	<li class="page_item page-item-15407"><a href="https://developer.xero.com/documentation/api/branding-themes/">Branding Themes</a></li>
+	<li class="page_item page-item-6712"><a href="https://developer.xero.com/documentation/api/contacts/">Contacts</a></li>
+	<li class="page_item page-item-36095"><a href="https://developer.xero.com/documentation/api/contactgroups/">Contact Groups</a></li>
+	<li class="page_item page-item-6715"><a href="https://developer.xero.com/documentation/api/credit-notes/">Credit Notes</a></li>
+	<li class="page_item page-item-6720"><a href="https://developer.xero.com/documentation/api/currencies/">Currencies</a></li>
+	<li class="page_item page-item-17711"><a href="https://developer.xero.com/documentation/api/employees/">Employees</a></li>
+	<li class="page_item page-item-21227"><a href="https://developer.xero.com/documentation/api/expense-claims/">Expense Claims</a></li>
+	<li class="page_item page-item-6723"><a href="https://developer.xero.com/documentation/api/invoices/">Invoices</a></li>
+	<li class="page_item page-item-36602"><a href="https://developer.xero.com/documentation/api/invoice-reminders/">Invoice Reminders</a></li>
+	<li class="page_item page-item-15834"><a href="https://developer.xero.com/documentation/api/items/">Items</a></li>
+	<li class="page_item page-item-15418"><a href="https://developer.xero.com/documentation/api/journals/">Journals</a></li>
+	<li class="page_item page-item-36453"><a href="https://developer.xero.com/documentation/api/linked-transactions/">Linked Transactions</a></li>
+	<li class="page_item page-item-16018"><a href="https://developer.xero.com/documentation/api/manual-journals/">Manual Journals</a></li>
+	<li class="page_item page-item-6730"><a href="https://developer.xero.com/documentation/api/organisation/">Organisation</a></li>
+	<li class="page_item page-item-36266"><a href="https://developer.xero.com/documentation/api/overpayments/">Overpayments</a></li>
+	<li class="page_item page-item-6732"><a href="https://developer.xero.com/documentation/api/payments/">Payments</a></li>
+	<li class="page_item page-item-36260"><a href="https://developer.xero.com/documentation/api/prepayments/">Prepayments</a></li>
+	<li class="page_item page-item-36506"><a href="https://developer.xero.com/documentation/api/purchase-orders/">Purchase Orders</a></li>
+	<li class="page_item page-item-36507"><a href="https://developer.xero.com/documentation/api/quotes/">Quotes</a></li>
+	<li class="page_item page-item-21162"><a href="https://developer.xero.com/documentation/api/receipts/">Receipts</a></li>
+	<li class="page_item page-item-35882"><a href="https://developer.xero.com/documentation/api/repeating-invoices/">Repeating Invoices</a></li>
+	<li class="page_item page-item-15874"><a href="https://developer.xero.com/documentation/api/reports/">Reports</a></li>
+	<li class="page_item page-item-6735"><a href="https://developer.xero.com/documentation/api/tax-rates/">Tax Rates</a></li>
+	<li class="page_item page-item-6738"><a href="https://developer.xero.com/documentation/api/tracking-categories/">Tracking Categories</a></li>
+	<li class="page_item page-item-6741"><a href="https://developer.xero.com/documentation/api/types/">Types</a></li>
+	<li class="page_item page-item-21250"><a href="https://developer.xero.com/documentation/api/users/">Users</a></li>
+</ul>
+</li>
+<li class="page_item page-item-35495 page_item_has_children current_page_ancestor current_page_parent"><a href="https://developer.xero.com/documentation/payroll-api/">Payroll API &ndash; Australia</a>
+<ul class="children">
+	<li class="page_item page-item-35590"><a href="https://developer.xero.com/documentation/payroll-api/overview/">Overview &ndash; Payroll Australia</a></li>
+	<li class="page_item page-item-35521"><a href="https://developer.xero.com/documentation/payroll-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-35497"><a href="https://developer.xero.com/documentation/payroll-api/employees/">Employees</a></li>
+	<li class="page_item page-item-35499"><a href="https://developer.xero.com/documentation/payroll-api/leaveapplications/">Leave Applications</a></li>
+	<li class="page_item page-item-36444"><a href="https://developer.xero.com/documentation/payroll-api/leavebalances/">Leave Balances</a></li>
+	<li class="page_item page-item-35500 current_page_item"><a href="https://developer.xero.com/documentation/payroll-api/payitems/">PayItems</a></li>
+	<li class="page_item page-item-35502"><a href="https://developer.xero.com/documentation/payroll-api/payrollcalendars/">Payroll Calendars</a></li>
+	<li class="page_item page-item-35503"><a href="https://developer.xero.com/documentation/payroll-api/payruns/">Pay Runs</a></li>
+	<li class="page_item page-item-35504"><a href="https://developer.xero.com/documentation/payroll-api/payslip/">Payslip</a></li>
+	<li class="page_item page-item-35701"><a href="https://developer.xero.com/documentation/payroll-api/settings/">Settings</a></li>
+	<li class="page_item page-item-35506"><a href="https://developer.xero.com/documentation/payroll-api/superfunds/">SuperFunds</a></li>
+	<li class="page_item page-item-35537"><a href="https://developer.xero.com/documentation/payroll-api/superfundproducts/">SuperFundProducts</a></li>
+	<li class="page_item page-item-35493"><a href="https://developer.xero.com/documentation/payroll-api/timesheets/">Timesheets</a></li>
+	<li class="page_item page-item-35509"><a href="https://developer.xero.com/documentation/payroll-api/types-and-codes/">Types and Codes</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36029 page_item_has_children"><a href="https://developer.xero.com/documentation/payroll-api-us/">Payroll API &ndash; US</a>
+<ul class="children">
+	<li class="page_item page-item-36030"><a href="https://developer.xero.com/documentation/payroll-api-us/overview-payroll-us/">Overview &ndash; Payroll US</a></li>
+	<li class="page_item page-item-36031"><a href="https://developer.xero.com/documentation/payroll-api-us/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36538"><a href="https://developer.xero.com/documentation/payroll-api-us/timeoff-balances/">Timeoff Balances</a></li>
+	<li class="page_item page-item-36032"><a href="https://developer.xero.com/documentation/payroll-api-us/employees/">Employees</a></li>
+	<li class="page_item page-item-36036"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-items/">Pay Items</a></li>
+	<li class="page_item page-item-36037"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-runs/">Pay Runs</a></li>
+	<li class="page_item page-item-36038"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-schedules/">Pay Schedules</a></li>
+	<li class="page_item page-item-36039"><a href="https://developer.xero.com/documentation/payroll-api-us/pay-stubs/">Pay Stubs</a></li>
+	<li class="page_item page-item-36040"><a href="https://developer.xero.com/documentation/payroll-api-us/settings/">Settings</a></li>
+	<li class="page_item page-item-36041"><a href="https://developer.xero.com/documentation/payroll-api-us/timesheets/">Timesheets</a></li>
+	<li class="page_item page-item-36042"><a href="https://developer.xero.com/documentation/payroll-api-us/types-codes/">Types and Codes</a></li>
+	<li class="page_item page-item-36043"><a href="https://developer.xero.com/documentation/payroll-api-us/work-locations/">Work Locations</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36523 page_item_has_children"><a href="https://developer.xero.com/documentation/assets-api/">Assets API</a>
+<ul class="children">
+	<li class="page_item page-item-36524"><a href="https://developer.xero.com/documentation/assets-api/overview/">Overview</a></li>
+	<li class="page_item page-item-36913"><a href="https://developer.xero.com/documentation/assets-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36914"><a href="https://developer.xero.com/documentation/assets-api/assets/">Assets</a></li>
+	<li class="page_item page-item-36915"><a href="https://developer.xero.com/documentation/assets-api/asset-types/">Asset Types</a></li>
+	<li class="page_item page-item-36916"><a href="https://developer.xero.com/documentation/assets-api/settings/">Settings</a></li>
+	<li class="page_item page-item-36917"><a href="https://developer.xero.com/documentation/assets-api/types/">Types</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36204 page_item_has_children"><a href="https://developer.xero.com/documentation/files-api/">Files API</a>
+<ul class="children">
+	<li class="page_item page-item-36210"><a href="https://developer.xero.com/documentation/files-api/overview-files/">Overview</a></li>
+	<li class="page_item page-item-36211"><a href="https://developer.xero.com/documentation/files-api/release-notes/">Release Notes</a></li>
+	<li class="page_item page-item-36212"><a href="https://developer.xero.com/documentation/files-api/files/">Files</a></li>
+	<li class="page_item page-item-36213"><a href="https://developer.xero.com/documentation/files-api/folders/">Folders</a></li>
+	<li class="page_item page-item-36214"><a href="https://developer.xero.com/documentation/files-api/associations/">Associations</a></li>
+	<li class="page_item page-item-36215"><a href="https://developer.xero.com/documentation/files-api/types/">Types</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36055 page_item_has_children"><a href="https://developer.xero.com/documentation/practice-manager/">Practice Manager API</a>
+<ul class="children">
+	<li class="page_item page-item-36056"><a href="https://developer.xero.com/documentation/practice-manager/overview-practice-manager-api/">Overview &ndash; Practice Manager</a></li>
+</ul>
+</li>
+<li class="page_item page-item-6840 page_item_has_children"><a href="https://developer.xero.com/documentation/api-guides/">How-to Guides</a>
+<ul class="children">
+	<li class="page_item page-item-36139"><a href="https://developer.xero.com/documentation/api-guides/integration-best-practices/">Integration Best Practices</a></li>
+	<li class="page_item page-item-35962"><a href="https://developer.xero.com/documentation/api-guides/certification-pre-flight-checklist/">Certification Checklist</a></li>
+	<li class="page_item page-item-35889"><a href="https://developer.xero.com/documentation/api-guides/conversions/">Conversions Guide</a></li>
+	<li class="page_item page-item-2967"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-crm-system-with-xero/">CRM and Xero</a></li>
+	<li class="page_item page-item-35733"><a href="https://developer.xero.com/documentation/api-guides/farming-xero/">Farming and Xero</a></li>
+	<li class="page_item page-item-36518"><a href="https://developer.xero.com/documentation/api-guides/inventory-integration-options/">Inventory Integration Options</a></li>
+	<li class="page_item page-item-10478"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-inventory-system-with-xero/">&ndash; Accounting for Inventory</a></li>
+	<li class="page_item page-item-36276 page_item_has_children"><a href="https://developer.xero.com/documentation/api-guides/tracked-inventory-in-xero/">&ndash; Tracked Inventory in Xero</a></li>
+	<li class="page_item page-item-32188"><a href="https://developer.xero.com/documentation/api-guides/handling-payment-processor-receipts-in-xero/">Payment processor receipts</a></li>
+	<li class="page_item page-item-35648"><a href="https://developer.xero.com/documentation/api-guides/payment-services-integration-with-xero/">Payment services and Xero</a></li>
+	<li class="page_item page-item-7830"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-payroll-system-with-xero/">Payroll and Xero</a></li>
+	<li class="page_item page-item-36583"><a href="https://developer.xero.com/documentation/api-guides/how-to-integrate-my-pos-system-with-xero/">Point of Sale and Xero</a></li>
+</ul>
+</li>
+	</ul>
+</div>
+			</div>
+		  <div class="span9">
+			  <div class="pageFrame">
+			    <div id="primary" class="site-content">
+				    <div id="content" role="main">
+			      				    <div class="entry-content">
+	<a class="dashingAutolink" name="autolink-101"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/PayItems"></a><h1 class="api">PayItems</h1>
+<div class="contentsNav"></div>
+<div class="api-tag"><a class="APIviewer" href="https://app.xero.com/Preview/payroll/PayItems" target="_blank">Try in API Previewer</a></div>
+<hr/>
+<h3>Overview</h3>
+<table cellspacing="0" class="apidoc-table">
+<tbody><tr>
+<td style="width:25%;">URL</td>
+<td>https://api.xero.com/payroll.xro/1.0/PayItems</td>
+</tr>
+<tr>
+<td>Methods Supported</td>
+<td><a href="#POST">POST</a>, <a href="#GET">GET</a></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Allows you to retrieve, add, update and delete Payroll Items in a Xero organisation
+</td>
+</tr>
+</tbody></table>
+<p><strong>Elements for PayItems</strong></p>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td style="width: 25%;">EarningsRates</td>
+<td>See <a href="#EarningsRates">EarningsRates</a></td>
+</tr>
+<tr>
+<td>DeductionTypes</td>
+<td>See <a href="#DeductionTypes">DeductionTypes</a></td>
+</tr>
+<tr>
+<td>LeaveTypes</td>
+<td>See <a href="#LeaveTypes">LeaveTypes</a></td>
+</tr>
+<tr>
+<td>ReimbursementTypes</td>
+<td>See <a href="#ReimbursementTypes">ReimbursementTypes</a></td>
+</tr>
+</tbody></table>
+<p><a name="EarningsRates"></a><strong>Elements for EarningsRates</strong></p>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>required </strong> to add an Earnings Rate</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">Name</td>
+<td>Name of the earnings rate (max length = 100)</td>
+</tr>
+<tr>
+<td>AccountCode</td>
+<td>See <a href="../../api/Accounts">Accounts</a></td>
+</tr>
+<tr>
+<td>TypeOfUnits</td>
+<td>Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT</td>
+</tr>
+<tr>
+<td>IsExemptFromTax</td>
+<td>Most payments are subject to tax, so you should only set this value if you are sure that a payment is exempt from PAYG withholding</td>
+</tr>
+<tr>
+<td>IsExemptFromSuper</td>
+<td>See the <a href="http://www.ato.gov.au/businesses/content.aspx?doc=/content/00249857.htm">ATO website</a> for details of which payments are exempt from SGC</td>
+</tr>
+<tr>
+<td>EarningsType</td>
+<td>See <a href="../types-and-codes#EarningsTypes">EarningsTypes</a></td>
+</tr>
+</tbody></table>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>optional </strong> for an Earnings Rate</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">EarningsRateID</td>
+<td>Xero identifier</td>
+</tr>
+<tr>
+<td>RateType</td>
+<td>See <a href="../types-and-codes#EarningsRateTypes">RateTypes</a></td>
+</tr>
+<tr>
+<td>RatePerUnit</td>
+<td>Default rate per unit (optional). Only applicable if RateType is RATEPERUNIT.</td>
+</tr>
+<tr>
+<td>Multiplier</td>
+<td>This is the multiplier used to calculate the rate per unit, based on the employee&rsquo;s ordinary earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE</td>
+</tr>
+<tr>
+<td>AccrueLeave</td>
+<td>Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Option Amount for FIXEDAMOUNT RateType EarningsRate</td>
+</tr>
+</tbody></table>
+<p><a name="DeductionTypes"></a><strong>Elements for DeductionTypes</strong></p>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>required </strong> to add a Deduction Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">Name</td>
+<td>Name of the deduction type (max length = 50)</td>
+</tr>
+<tr>
+<td>AccountCode</td>
+<td>See <a href="../../api/Accounts">Accounts</a></td>
+</tr>
+<tr>
+<td>ReducesTax</td>
+<td>Indicates that this is a pre-tax deduction that will reduce the amount of tax you withhold from an employee.</td>
+</tr>
+<tr>
+<td>ReducesSuper</td>
+<td>Most deductions don&rsquo;t reduce your superannuation guarantee contribution liability, so typically you will not set any value for this.</td>
+</tr>
+</tbody></table>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>optional </strong> for a Deduction Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">DeductionTypeID</td>
+<td>Xero identifier</td>
+</tr>
+</tbody></table>
+<p><a name="LeaveTypes"></a><strong>Elements for LeaveTypes</strong></p>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>required </strong> to add a Leave Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">Name</td>
+<td>Name of the leave type (max length = 50)</td>
+</tr>
+<tr>
+<td>TypeOfUnits</td>
+<td>The type of units by which leave entitlements are normally tracked. These are typically the same as the type of units used for the employee&rsquo;s ordinary earnings rate</td>
+</tr>
+<tr>
+<td>IsPaidLeave</td>
+<td>Set this to indicate that an employee will be paid when taking this type of leave</td>
+</tr>
+<tr>
+<td>ShowOnPayslip</td>
+<td>Set this if you want a balance for this leave type to be shown on your employee&rsquo;s payslips</td>
+</tr>
+</tbody></table>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>optional </strong> for a Leave Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">LeaveTypeID</td>
+<td>Xero identifier</td>
+</tr>
+<tr>
+<td>NormalEntitlement</td>
+<td>The number of units the employee is entitled to each year</td>
+</tr>
+<tr>
+<td>LeaveLoadingRate</td>
+<td>Enter an amount here if your organisation pays an additional percentage on top of ordinary earnings when your employees take leave (typically 17.5%)</td>
+</tr>
+</tbody></table>
+<p><a name="ReimbursementTypes"></a><strong>Elements for ReimbursementTypes</strong></p>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>required </strong> to add a Reimbursement Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">Name</td>
+<td>Name of the reimbursement type (max length = 50)</td>
+</tr>
+<tr>
+<td>AccountCode</td>
+<td>See Accounts</td>
+</tr>
+</tbody></table>
+<table cellspacing="0" class="apidoc-table" style="vertical-align:middle">
+<tbody><tr>
+<td colspan="2"><em>The following are <strong>optional </strong> for a Reimbursement Type</em></td>
+</tr>
+<tr>
+<td style="width: 25%;">ReimbursementTypeID</td>
+<td>Xero identifier</td>
+</tr>
+</tbody></table>
+<hr/><a name="GET"></a><p></p>
+<h3>GET PayItems</h3>
+<p>By default using GET PayItems will return all PayItems.</p>
+<h4>Example response for GET PayItems</h4>
+<pre class="brush: xml; title: ; notranslate" title="">&lt;PayItems&gt;
+    &lt;EarningsRates&gt;
+      &lt;EarningsRate&gt;
+        &lt;EarningsRateID&gt;eca71b79-edab-4c3f-967f-a405453bac08&lt;/EarningsRateID&gt;
+        &lt;Name&gt;Ordinary Hours&lt;/Name&gt;
+        &lt;EarningsType&gt;ORDINARYTIMEEARNINGS&lt;/EarningsType&gt;
+        &lt;RateType&gt;RATEPERUNIT&lt;/RateType&gt;
+        &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsExemptFromTax&gt;false&lt;/IsExemptFromTax&gt;
+        &lt;IsExemptFromSuper&gt;false&lt;/IsExemptFromSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/EarningsRate&gt;
+      &lt;EarningsRate&gt;
+        &lt;EarningsRateID&gt;f8eb8381-7db0-4de3-ada0-e03bbd1d811f&lt;/EarningsRateID&gt;
+        &lt;Name&gt;Overtime Hours (exempt from super)&lt;/Name&gt;
+        &lt;EarningsType&gt;OVERTIMEEARNINGS&lt;/EarningsType&gt;
+        &lt;RateType&gt;MULTIPLE&lt;/RateType&gt;
+        &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+        &lt;Multiplier&gt;1.5000&lt;/Multiplier&gt;
+        &lt;IsExemptFromTax&gt;false&lt;/IsExemptFromTax&gt;
+        &lt;IsExemptFromSuper&gt;true&lt;/IsExemptFromSuper&gt;
+        &lt;AccrueLeave&gt;false&lt;/AccrueLeave&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/EarningsRate&gt;
+      &lt;EarningsRate&gt;
+        &lt;EarningsRateID&gt;694d0065-f594-48f7-89c0-5cfd7a0c4c92&lt;/EarningsRateID&gt;
+        &lt;Name&gt;Allowances subject to tax withholding and super&lt;/Name&gt;
+        &lt;EarningsType&gt;ALLOWANCE&lt;/EarningsType&gt;
+        &lt;RateType&gt;RATEPERUNIT&lt;/RateType&gt;
+        &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+        &lt;TypeOfUnits&gt;Fixed Amount&lt;/TypeOfUnits&gt;
+        &lt;IsExemptFromTax&gt;false&lt;/IsExemptFromTax&gt;
+        &lt;IsExemptFromSuper&gt;false&lt;/IsExemptFromSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/EarningsRate&gt;
+      &lt;EarningsRate&gt;
+        &lt;EarningsRateID&gt;92d6ae67-4302-4561-9000-90163cac8eb8&lt;/EarningsRateID&gt;
+        &lt;Name&gt;Allowances exempt from tax withholding and super&lt;/Name&gt;
+        &lt;EarningsType&gt;ALLOWANCE&lt;/EarningsType&gt;
+        &lt;RateType&gt;RATEPERUNIT&lt;/RateType&gt;
+        &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+        &lt;TypeOfUnits&gt;Fixed Amount&lt;/TypeOfUnits&gt;
+        &lt;IsExemptFromTax&gt;true&lt;/IsExemptFromTax&gt;
+        &lt;IsExemptFromSuper&gt;true&lt;/IsExemptFromSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/EarningsRate&gt;
+    &lt;/EarningsRates&gt;
+    &lt;DeductionTypes&gt;
+      &lt;DeductionType&gt;
+        &lt;DeductionTypeID&gt;f9be43ee-1876-4e67-a295-2a30eadd1942&lt;/DeductionTypeID&gt;
+        &lt;Name&gt;Union Fees/Subscriptions&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;ReducesTax&gt;false&lt;/ReducesTax&gt;
+        &lt;ReducesSuper&gt;false&lt;/ReducesSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/DeductionType&gt;
+      &lt;DeductionType&gt;
+        &lt;DeductionTypeID&gt;f70fcea1-157c-4a1a-8724-369160e5cb5c&lt;/DeductionTypeID&gt;
+        &lt;Name&gt;Lease Payments&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;ReducesTax&gt;true&lt;/ReducesTax&gt;
+        &lt;ReducesSuper&gt;true&lt;/ReducesSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/DeductionType&gt;
+      &lt;DeductionType&gt;
+        &lt;DeductionTypeID&gt;8d6e580f-37e1-48cf-80fe-e591008a251f&lt;/DeductionTypeID&gt;
+        &lt;Name&gt;FBT&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;ReducesTax&gt;true&lt;/ReducesTax&gt;
+        &lt;ReducesSuper&gt;true&lt;/ReducesSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/DeductionType&gt;
+      &lt;DeductionType&gt;
+        &lt;DeductionTypeID&gt;eabff3b0-2fdc-4e3b-955c-30e113829c74&lt;/DeductionTypeID&gt;
+        &lt;Name&gt;Other Pre-Tax Deductions&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;ReducesTax&gt;true&lt;/ReducesTax&gt;
+        &lt;ReducesSuper&gt;true&lt;/ReducesSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/DeductionType&gt;
+      &lt;DeductionType&gt;
+        &lt;DeductionTypeID&gt;c0b2f074-883e-451b-8863-185fd2403cef&lt;/DeductionTypeID&gt;
+        &lt;Name&gt;Other Post-Tax Deductions&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;ReducesTax&gt;false&lt;/ReducesTax&gt;
+        &lt;ReducesSuper&gt;false&lt;/ReducesSuper&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/DeductionType&gt;
+    &lt;/DeductionTypes&gt;
+    &lt;ReimbursementTypes&gt;
+      &lt;ReimbursementType&gt;
+        &lt;ReimbursementTypeID&gt;d4263307-f387-4c69-9525-7482d742ef50&lt;/ReimbursementTypeID&gt;
+        &lt;Name&gt;Travel National Costs&lt;/Name&gt;
+        &lt;AccountCode&gt;493&lt;/AccountCode&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/ReimbursementType&gt;
+      &lt;ReimbursementType&gt;
+        &lt;ReimbursementTypeID&gt;7ecdc711-ea65-469a-ab9d-2a63f0753129&lt;/ReimbursementTypeID&gt;
+        &lt;Name&gt;Other Reimbursable Costs&lt;/Name&gt;
+        &lt;AccountCode&gt;850&lt;/AccountCode&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/ReimbursementType&gt;
+    &lt;/ReimbursementTypes&gt;
+    &lt;LeaveTypes&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;bd2ead8d-f8f9-480a-8a71-260222ed1a34&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Annual Leave&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;NormalEntitlement&gt;152.0000&lt;/NormalEntitlement&gt;
+        &lt;IsPaidLeave&gt;true&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;true&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;cd61fd41-671b-4d1f-ad6e-fbcb1eca3fc3&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Long Service Leave&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;true&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;c06359d4-ee61-4f74-9c74-f94ef6a850e3&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Parental Leave (unpaid)&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;false&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;271814d6-1087-45f2-923a-8301113a298b&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Personal/Carer&#39;s Leave&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;NormalEntitlement&gt;76.0000&lt;/NormalEntitlement&gt;
+        &lt;IsPaidLeave&gt;true&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;f3a5f2f8-c14e-4223-ab58-4e779e0f6f2c&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Carer&#39;s Leave (unpaid)&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;false&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;30ca48d0-fe04-40c2-b590-f5191159259f&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Compassionate Leave (paid)&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;true&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;1e1765bc-1dbc-4ac9-b6cd-9f9f3290d8a4&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Compassionate Leave (unpaid)&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;false&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;42d46756-9f2b-4456-ad44-8c889ff4a5bd&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Community Service Leave&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;false&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+      &lt;LeaveType&gt;
+        &lt;LeaveTypeID&gt;7ea96a9f-d7c2-4de1-a3ac-bf89980f1890&lt;/LeaveTypeID&gt;
+        &lt;Name&gt;Other Unpaid Leave&lt;/Name&gt;
+        &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+        &lt;IsPaidLeave&gt;false&lt;/IsPaidLeave&gt;
+        &lt;ShowOnPayslip&gt;false&lt;/ShowOnPayslip&gt;
+        &lt;UpdatedDateUTC&gt;2013-04-09T23:45:25&lt;/UpdatedDateUTC&gt;
+      &lt;/LeaveType&gt;
+    &lt;/LeaveTypes&gt;
+  &lt;/PayItems&gt;
+</pre>
+<hr/><a name="POST"></a><p></p>
+<h3>POST PayItems</h3>
+<p>Use this method to create, update or delete one or more payroll pay items.</p>
+<p><strong>Note:</strong> Deleting payroll PayItems works as follows.  If you include a PayItem type (example: &lt;DeductionTypes&gt;) you must include each &lt;DeductionType&gt;, otherwise it will be deleted.  If you omit the PayItem type from your request all PayItems of that type will <strong>not</strong> be modified or deleted.</p>
+<p>There is one exception, PayItems that have been used within a POSTED Payrun will become &lsquo;locked&rsquo; and can not be deleted.</p>
+<h4>Example updating payitems</h4>
+<pre class="brush: xml; title: ; notranslate" title="">&lt;PayItems&gt;
+  &lt;DeductionTypes&gt;
+    &lt;DeductionType&gt;
+      &lt;AccountCode&gt;826&lt;/AccountCode&gt;
+      &lt;DeductionTypeID&gt;648a097e-11ff-42ad-be47-e77b85597a0f&lt;/DeductionTypeID&gt;
+      &lt;Name&gt;Union Fees&lt;/Name&gt;
+      &lt;ReducesSuper&gt;false&lt;/ReducesSuper&gt;
+      &lt;ReducesTax&gt;false&lt;/ReducesTax&gt;
+    &lt;/DeductionType&gt;
+    &lt;DeductionType&gt;
+      &lt;AccountCode&gt;826&lt;/AccountCode&gt;
+      &lt;DeductionTypeID&gt;82758787-2baf-4677-8aec-2fa1651b57a9&lt;/DeductionTypeID&gt;
+      &lt;Name&gt;Social Club&lt;/Name&gt;
+      &lt;ReducesSuper&gt;false&lt;/ReducesSuper&gt;
+      &lt;ReducesTax&gt;false&lt;/ReducesTax&gt;
+    &lt;/DeductionType&gt;
+  &lt;/DeductionTypes&gt;
+  &lt;EarningsRates&gt;
+    &lt;EarningsRate&gt;
+      &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+      &lt;AccrueLeave&gt;false&lt;/AccrueLeave&gt;
+      &lt;EarningsRateID&gt;d55a0c16-dc45-40dd-b8c1-95496c9f20f0&lt;/EarningsRateID&gt;
+      &lt;IsAllowance&gt;false&lt;/IsAllowance&gt;
+      &lt;IsExemptFromSuper&gt;false&lt;/IsExemptFromSuper&gt;
+      &lt;IsExemptFromTax&gt;false&lt;/IsExemptFromTax&gt;
+      &lt;Name&gt;Ordinary Hours&lt;/Name&gt;
+      &lt;RateType&gt;FIXED&lt;/RateType&gt;
+      &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+    &lt;/EarningsRate&gt;
+    &lt;EarningsRate&gt;
+      &lt;AccountCode&gt;477&lt;/AccountCode&gt;
+      &lt;AccrueLeave&gt;false&lt;/AccrueLeave&gt;
+      &lt;EarningsRateID&gt;acff395b-4ced-4737-b6b4-ed0f241c1ff0&lt;/EarningsRateID&gt;
+      &lt;IsAllowance&gt;false&lt;/IsAllowance&gt;
+      &lt;IsExemptFromSuper&gt;true&lt;/IsExemptFromSuper&gt;
+      &lt;IsExemptFromTax&gt;false&lt;/IsExemptFromTax&gt;
+      &lt;Multiplier&gt;1.5000&lt;/Multiplier&gt;
+      &lt;Name&gt;Overtime Hours (exempt from super)&lt;/Name&gt;
+      &lt;RateType&gt;MULTIPLE&lt;/RateType&gt;
+    &lt;/EarningsRate&gt;
+  &lt;/EarningsRates&gt;
+  &lt;LeaveTypes&gt;
+    &lt;LeaveType&gt;
+      &lt;IsPaidLeave&gt;true&lt;/IsPaidLeave&gt;
+      &lt;LeaveLoadingRate&gt;2.0000&lt;/LeaveLoadingRate&gt;
+      &lt;LeaveTypeID&gt;209b9774-ebe5-4b9e-b222-cf296444f57b&lt;/LeaveTypeID&gt;
+      &lt;Name&gt;Annual Leave&lt;/Name&gt;
+      &lt;NormalEntitlement&gt;160.0000&lt;/NormalEntitlement&gt;
+      &lt;ShowOnPayslip&gt;true&lt;/ShowOnPayslip&gt;
+      &lt;TypeOfUnits&gt;Hours&lt;/TypeOfUnits&gt;
+    &lt;/LeaveType&gt;
+  &lt;/LeaveTypes&gt;
+&lt;/PayItems&gt;
+</pre>
+</div>
+
+
+			      				    </div>
+			    </div>
+			  </div>
+			  <div class="resultFooter">
+					<span class="communityIcon"></span>Ask questions, get help in the <a href="https://community.xero.com/developer/" target="_blank">Xero Developer Community</a>
+			  </div>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="b-container">
+		<div class="b-row">
+		  <div class="span2">
+        <h5>DEVELOP</h5>
+        <ul>
+          <li><a href="documentation/getting-started/getting-started-guide/">Getting Started</a></li>
+          <li><a href="documentation/">Documentation</a></li>
+          <li><a href="code-samples/libraries/overview/">SDKs</a></li>
+          <li><a href="https://app.xero.com/Previewer">API Previewer</a></li>
+          <li><a href="https://app.xero.com/Application">My Applications</a></li>
+          <li><a href="become-a-partner/">Become a Partner</a></li>
+        </ul>
+      </div>
+      <div class="span2">
+        <h5>HELP</h5>
+        <ul>
+          <li><a href="https://community.xero.com/developer/">Community</a></li>
+          <li><a href="support">Support</a></li>
+          <li><a href="faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="span3">
+        <h5>API</h5>
+        <ul>
+          <li><a href="documentation/api/v2-release-notes/">Release notes (Core)</a></li>
+          <li><a href="documentation/payroll-api/release-notes/">Release notes (Payroll)</a></li>
+          <li><a href="http://status.developer.xero.com/" target="_blank">Status</a></li>
+          <li><a href="feedback/">Give us feedback</a></li>
+        </ul>
+      </div>
+      <div class="span2 offset3">
+        <a href="https://www.xero.com/signup/" class="tryXero">Try Xero for free</a>
+      </div>
+    </div>
+    <hr/>
+    <div class="b-row">
+      <div class="span2">
+        <a class="twitter" href="https://twitter.com/xeroAPI/">@XeroAPI on Twitter</a>
+      </div>
+      <div class="span2">
+        <a class="twitter" href="http://www.xero.com/careers/">Xero is hiring!</a>
+      </div>
+      <div class="span2 offset5">
+        <a class="terms" href="xero-developer-platform-terms-conditions/">Terms of use</a>
+      </div>
+      <div class="span1">
+        <a class="privacy" href="http://www.xero.com/about/privacy/">Privacy</a>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="https://plus.google.com/114409208399183961977" rel="publisher"></a>
+<script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b"></script>
+<script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushXml.js?ver=3.0.9b"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://developer.xero.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://developer.xero.com/wp-content/themes/DevCenter-master/library/css/syntaxhighlighter-theme-xero.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['tab-size'] = 2;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.defaults['wrap-lines'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script>var _wpcf7 = {"loaderUrl":"https:\/\/developer.xero.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};</script><script>var DavesWordPressLiveSearchConfig = {"resultsDirection":"down","showThumbs":"false","showExcerpt":"false","showMoreResultsLink":"true","minCharsToSearch":"1","xOffset":"-14","yOffset":"10","blogURL":"https:\/\/developer.xero.com","ajaxURL":"https:\/\/developer.xero.com\/wp-admin\/admin-ajax.php","viewMoreText":"View more results","outdatedJQuery":"Dave's WordPress Live Search requires jQuery 1.2.6 or higher. WordPress ships with current jQuery versions. But if you are seeing this message, it's likely that another plugin is including an earlier version.","resultTemplate":"<ul id=\"dwls_search_results\" class=\"search_results dwls_search_results\">\n<input type=\"hidden\" name=\"query\" value=\"<%- resultsSearchTerm %>\" \/>\n<% _.each(searchResults, function(searchResult, index, list) { %>\n        <%\n        \/\/ Thumbnails\n        if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) {\n                liClass = \"post_with_thumb\";\n        }\n        else {\n                liClass = \"\";\n        }\n        %>\n        <li class=\"daves-wordpress-live-search_result <%- liClass %> '\">\n        <% if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) { %>\n                <img src=\"<%= searchResult.attachment_thumbnail %>\" class=\"post_thumb\" \/>\n        <% } %>\n\n        <a href=\"<%= searchResult.permalink %>\" class=\"daves-wordpress-live-search_title\"><%= searchResult.post_title %><\/a>\n\n        <% if(searchResult.post_price !== undefined) { %>\n                <p class=\"price\"><%- searchResult.post_price %><\/p>\n        <% } %>\n\n        <% if(DavesWordPressLiveSearchConfig.showExcerpt == \"true\" && searchResult.post_excerpt) { %>\n                <p class=\"excerpt clearfix\"><%= searchResult.post_excerpt %><\/p>\n        <% } %>\n\n        <% if(e.displayPostMeta) { %>\n                <p class=\"meta clearfix daves-wordpress-live-search_author\" id=\"daves-wordpress-live-search_author\">Posted by <%- searchResult.post_author_nicename %><\/p><p id=\"daves-wordpress-live-search_date\" class=\"meta clearfix daves-wordpress-live-search_date\"><%- searchResult.post_date %><\/p>\n        <% } %>\n        <div class=\"clearfix\"><\/div><\/li>\n<% }); %>\n\n<% if(searchResults[0].show_more !== undefined && searchResults[0].show_more && DavesWordPressLiveSearchConfig.showMoreResultsLink == \"true\") { %>\n        <div class=\"clearfix search_footer\"><a href=\"<%= DavesWordPressLiveSearchConfig.blogURL %>\/?s=<%-  resultsSearchTerm %>\"><%- DavesWordPressLiveSearchConfig.viewMoreText %><\/a><\/div>\n<% } %>\n\n<\/ul>"};</script><script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-534b9ec6-9ae3bedb.js"></script>
+<script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/black-nav.js"></script>
+<script type="text/javascript" src="https://xerodev-wpengine.netdna-ssl.com/wp-includes/js/wp-embed.min.js"></script>
+
+
+</body></html>

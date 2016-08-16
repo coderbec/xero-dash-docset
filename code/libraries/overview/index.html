@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]><html class="ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/favicon.ico?m=15032016" type="image/x-icon">
+	
+<!-- This site is optimized with the Yoast SEO plugin v3.2.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>API Code Samples &amp; SDKs - Xero Developer</title>
+<meta name="description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://developer.xero.com/code-samples/libraries/overview/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="API Code Samples &amp; SDKs - Xero Developer" />
+<meta property="og:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero." />
+<meta property="og:url" content="https://developer.xero.com/code-samples/libraries/overview/" />
+<meta property="og:site_name" content="Xero API Developer Center" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Xero Developer Centre provides information on the Xero APIs for developers to integrate with the online accounting software platform, Xero." />
+<meta name="twitter:title" content="API Code Samples &amp; SDKs - Xero Developer" />
+<meta name="twitter:site" content="@xeroAPI" />
+<meta name="twitter:creator" content="@xeroAPI" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Feed" href="https://developer.xero.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Comments Feed" href="https://developer.xero.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Xero API Developer Center &raquo; Overview Comments Feed" href="https://developer.xero.com/code-samples/libraries/overview/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/developer.xero.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='black-nav-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/css/black-nav.css' type='text/css' media='all' />
+<link rel='stylesheet' id='minqueue-80a2dc04-54ce0cfd-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-80a2dc04-54ce0cfd.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-2ac824e9-f95de822.js'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/lib/html5shiv.js'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='https://developer.xero.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://developer.xero.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://developer.xero.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://developer.xero.com/?p=35565' />
+<link rel="alternate" type="application/json+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fcode-samples%2Flibraries%2Foverview%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://developer.xero.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdeveloper.xero.com%2Fcode-samples%2Flibraries%2Foverview%2F&#038;format=xml" />
+<style>.ssbl-wrap .ssbl-container .ssbl-img{width:50px;height:50px;padding:5px;border:0;box-shadow:0;display:inline}.ssbl-wrap .ssbl-container a{border:0}</style><link rel='stylesheet' id='minqueue-a0b326f9-4f2caace-css'  href='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-a0b326f9-4f2caace.css' type='text/css' media='all' />
+<style type="text/css">            ul.dwls_search_results {
+              width: 250px;
+            }
+            ul.dwls_search_results li {
+              color: #797979;
+              background-color: #ffffff;
+            }
+            .search_footer {
+              background-color: #f5f7f8;
+            }
+            .search_footer a,
+            .search_footer a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li a, ul.dwls_search_results li a:visited {
+              color: #00b9e7;
+            }
+            ul.dwls_search_results li:hover
+            {
+              background-color: ;
+            }
+            ul.dwls_search_results li {
+              border-bottom: 1px solid #e0e5e9;
+            }</style><style type="text/css" id="syntaxhighlighteranchor"></style>
+
+	<link rel="stylesheet" href="https://edge.xero.com/style/xui/10.0.0/xui.min.css" />
+
+</head>
+<body class="xui-body">
+
+      <div class="Notification js-notification">
+      <div class="b-container">
+        <div class="b-row">
+          <div class="span12">
+            <p id="x1237" class="xxxjs-notificationContent">Developer TV Episode 3 is out. Watch it <a href="https://www.youtube.com/watch?v=vpPWKwwyvkc" target="_blank" class="js-notificationAcknowledge">here!</a></p>
+            <button class="Notification-closeButton js-notificationCloseButton" type="button">
+              <span class="Notification-closeButtonText is-hidden">Close</span>
+              <svg class="Notification-closeButtonIcon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 30c8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15zm-1.765-15L7.5 9.265 9.265 7.5 15 13.235 20.735 7.5 22.5 9.265 16.765 15l5.735 5.735-1.765 1.765L15 16.765 9.265 22.5 7.5 20.735 13.235 15z" fill-rule="evenodd"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+		
+    <!-- rev 29a7f4b -->
+    <div id="devx-nav">
+
+        <div class="devx-logo">
+            <a href="/">
+                <img src="https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/images/developer-logo.svg" alt="Xero Developer"
+                    width="115" height="30" class="dev-logo" />
+            </a>
+        </div>
+        <div class="devx-nav-tabs-left">
+            <ul>
+                <li class="devx-nav-block">
+                    <a href="/documentation/" id="devx-page-docs"
+                        class="devx-nav-item devx-nav-link ">Docs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="/code-samples/" id="devx-page-sdks"
+                        class="devx-nav-item devx-nav-link devx-nav-selected">SDKs</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Preview/Organisation" id="devx-page-previewer"
+                        class="devx-nav-item devx-nav-link">Previewer</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://app.xero.com/Application" id="devx-page-myapps"
+                        class="devx-nav-item devx-nav-link">My Apps</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://community.xero.com/developer/" id="devx-page-community"
+                        class="devx-nav-item devx-nav-link">Community</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="/partner/" id="devx-page-partner"
+                        class="devx-nav-item devx-nav-link ">Partner</a>
+                </li>
+                <li class="devx-nav-block">
+                    <a href="https://devblog.xero.com/" id="devx-page-blog"
+                        class="devx-nav-item devx-nav-link ">Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="devx-nav-tabs-right">
+            <ul>
+                <li class="devx-nav-block" style="margin-right: 46px;">
+                    <a class="devx-nav-item devx-nav-help" id="devx-nav-help-icon"></a>
+
+                    <div class="xui-dropdownmenu xui-dropdownmenu xui-dropdownmenu-layout xui-dropdownmenu-right" role="menubar" aria-label="dropdown menu">
+                        <div class="xui-dropdownmenu--body">
+                            <ul class="xui-menugroup xui-menugroup-layout" role="menu" aria-label="Menu group 1 label">
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="/faq/" id="dex-page-faqs"
+                                        class="xui-menuitem--body">FAQs
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="true">
+                                    <a href="/support/" id="dex-page-support"
+                                        class="xui-menuitem--body">Support
+                                    </a>
+                                </li>
+                                <li class="xui-menuitem xui-menuitem-layout" role="menuitem" aria-selected="false">
+                                    <a href="https://status.developer.xero.com/" id="dex-page-apistatus"
+                                        class="xui-menuitem--body">API Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="xui-input-wrapper">
+                        <svg class="xui-icon xui-input--icon-left" ><use xlink:href="#xui-icon-search" /></svg>
+                        <input class="xui-input devx-nav-search" type="search" placeholder="Search" aria-label="Search" id="devx-top-search" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="xui-icon-blob-holder"></div>
+    <script src="https://edge.xero.com/style/xui-icon/2.3.0/xuiIconBlobES5.js"></script>
+    <script type="text/javascript">
+        (function () { xuiIconBlobES5(document.getElementById('xui-icon-blob-holder')); })();
+    </script>
+
+	<div class="underHeader">
+		<div class="b-container">
+			<div class="b-row">
+				<div class="span12">
+					<div class="titleUnderHeader">
+						<h1>SDKs</h1>					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="pageWrapper">
+  <div class="b-container">
+	  <div class="b-row">
+			<div class="span3">
+				<div class="leftSideBar">
+	<ul class="pagesList">
+	<li class="page_item page-item-35564 page_item_has_children current_page_ancestor current_page_parent"><a href="https://developer.xero.com/code-samples/libraries/">Libraries</a>
+<ul class='children'>
+	<li class="page_item page-item-35565 current_page_item"><a href="https://developer.xero.com/code-samples/libraries/overview/">Overview</a></li>
+	<li class="page_item page-item-9984"><a href="https://developer.xero.com/code-samples/libraries/using-the-xero-api-with-c/">C#</a></li>
+	<li class="page_item page-item-35837"><a href="https://developer.xero.com/code-samples/libraries/cfml/">CFML</a></li>
+	<li class="page_item page-item-10079"><a href="https://developer.xero.com/code-samples/libraries/java/">Java</a></li>
+	<li class="page_item page-item-35532"><a href="https://developer.xero.com/code-samples/libraries/node-js/">Node.js</a></li>
+	<li class="page_item page-item-10257 page_item_has_children"><a href="https://developer.xero.com/code-samples/libraries/php/">PHP</a></li>
+	<li class="page_item page-item-11733"><a href="https://developer.xero.com/code-samples/libraries/python/">Python</a></li>
+	<li class="page_item page-item-9663"><a href="https://developer.xero.com/code-samples/libraries/using-the-xero-api-with-ruby/">Ruby</a></li>
+</ul>
+</li>
+<li class="page_item page-item-36306 page_item_has_children"><a href="https://developer.xero.com/code-samples/tools/">Tools</a>
+<ul class='children'>
+	<li class="page_item page-item-36308"><a href="https://developer.xero.com/code-samples/tools/overview/">Overview</a></li>
+	<li class="page_item page-item-36309"><a href="https://developer.xero.com/code-samples/tools/cdata/">CData</a></li>
+	<li class="page_item page-item-36762"><a href="https://developer.xero.com/code-samples/tools/ssis-integration-toolkit-xero/">KingswaySoft</a></li>
+</ul>
+</li>
+	</ul>
+</div>
+			</div>
+		  <div class="span9">
+			  <div class="pageFrame">
+			    <div id="primary" class="site-content">
+				    <div id="content" role="main">
+			      				    <div class="entry-content">
+	<h2>Need a head start?</h2>
+<hr />
+<p>Use the example codes and SDKs provided in a variety of programming languages to get familiar with our API. If you wish to contribute an example of using our API in another language then please <a href="https://community.xero.com/developer/topic/16971/" target="_blank">let us know in our forum</a> and we will check it out.
+</p>
+<h4>Extra goodies</h4>
+<ul>
+<li><a href="http://github.com/nikz/XeroLogin" target="_blank">Javascript for an authentication popup window</a></li>
+<li><a href="http://github.com/XeroAPI/XeroAPI-Schemas"  target="_blank">Xero API endpoint schemas</a></li>
+</ul>
+</div>
+
+
+			      				    </div>
+			    </div>
+			  </div>
+			  <div class="resultFooter">
+					<span class="communityIcon"></span>Ask questions, get help in the <a href="https://community.xero.com/developer/" target="_blank">Xero Developer Community</a>
+			  </div>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="b-container">
+		<div class="b-row">
+		  <div class="span2">
+        <h5>DEVELOP</h5>
+        <ul>
+          <li><a href="/documentation/getting-started/getting-started-guide/">Getting Started</a></li>
+          <li><a href="/documentation/">Documentation</a></li>
+          <li><a href="/code-samples/libraries/overview/">SDKs</a></li>
+          <li><a href="https://app.xero.com/Previewer">API Previewer</a></li>
+          <li><a href="https://app.xero.com/Application">My Applications</a></li>
+          <li><a href="/become-a-partner/">Become a Partner</a></li>
+        </ul>
+      </div>
+      <div class="span2">
+        <h5>HELP</h5>
+        <ul>
+          <li><a href="https://community.xero.com/developer/">Community</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="span3">
+        <h5>API</h5>
+        <ul>
+          <li><a href="/documentation/api/v2-release-notes/">Release notes (Core)</a></li>
+          <li><a href="/documentation/payroll-api/release-notes/">Release notes (Payroll)</a></li>
+          <li><a href="http://status.developer.xero.com/" target="_blank">Status</a></li>
+          <li><a href="/feedback/">Give us feedback</a></li>
+        </ul>
+      </div>
+      <div class="span2 offset3">
+        <a href="https://www.xero.com/signup/" class="tryXero" >Try Xero for free</a>
+      </div>
+    </div>
+    <hr>
+    <div class="b-row">
+      <div class="span2">
+        <a class="twitter" href="https://twitter.com/xeroAPI/">@XeroAPI on Twitter</a>
+      </div>
+      <div class="span2">
+        <a class="twitter" href="http://www.xero.com/careers/">Xero is hiring!</a>
+      </div>
+      <div class="span2 offset5">
+        <a class="terms" href="/xero-developer-platform-terms-conditions/">Terms of use</a>
+      </div>
+      <div class="span1">
+        <a class="privacy" href="http://www.xero.com/about/privacy/">Privacy</a>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="https://plus.google.com/114409208399183961977" rel="publisher"></a>
+<script>var _wpcf7 = {"loaderUrl":"https:\/\/developer.xero.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};</script><script>var DavesWordPressLiveSearchConfig = {"resultsDirection":"down","showThumbs":"false","showExcerpt":"false","showMoreResultsLink":"true","minCharsToSearch":"1","xOffset":"-14","yOffset":"10","blogURL":"https:\/\/developer.xero.com","ajaxURL":"https:\/\/developer.xero.com\/wp-admin\/admin-ajax.php","viewMoreText":"View more results","outdatedJQuery":"Dave's WordPress Live Search requires jQuery 1.2.6 or higher. WordPress ships with current jQuery versions. But if you are seeing this message, it's likely that another plugin is including an earlier version.","resultTemplate":"<ul id=\"dwls_search_results\" class=\"search_results dwls_search_results\">\n<input type=\"hidden\" name=\"query\" value=\"<%- resultsSearchTerm %>\" \/>\n<% _.each(searchResults, function(searchResult, index, list) { %>\n        <%\n        \/\/ Thumbnails\n        if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) {\n                liClass = \"post_with_thumb\";\n        }\n        else {\n                liClass = \"\";\n        }\n        %>\n        <li class=\"daves-wordpress-live-search_result <%- liClass %> '\">\n        <% if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) { %>\n                <img src=\"<%= searchResult.attachment_thumbnail %>\" class=\"post_thumb\" \/>\n        <% } %>\n\n        <a href=\"<%= searchResult.permalink %>\" class=\"daves-wordpress-live-search_title\"><%= searchResult.post_title %><\/a>\n\n        <% if(searchResult.post_price !== undefined) { %>\n                <p class=\"price\"><%- searchResult.post_price %><\/p>\n        <% } %>\n\n        <% if(DavesWordPressLiveSearchConfig.showExcerpt == \"true\" && searchResult.post_excerpt) { %>\n                <p class=\"excerpt clearfix\"><%= searchResult.post_excerpt %><\/p>\n        <% } %>\n\n        <% if(e.displayPostMeta) { %>\n                <p class=\"meta clearfix daves-wordpress-live-search_author\" id=\"daves-wordpress-live-search_author\">Posted by <%- searchResult.post_author_nicename %><\/p><p id=\"daves-wordpress-live-search_date\" class=\"meta clearfix daves-wordpress-live-search_date\"><%- searchResult.post_date %><\/p>\n        <% } %>\n        <div class=\"clearfix\"><\/div><\/li>\n<% }); %>\n\n<% if(searchResults[0].show_more !== undefined && searchResults[0].show_more && DavesWordPressLiveSearchConfig.showMoreResultsLink == \"true\") { %>\n        <div class=\"clearfix search_footer\"><a href=\"<%= DavesWordPressLiveSearchConfig.blogURL %>\/?s=<%-  resultsSearchTerm %>\"><%- DavesWordPressLiveSearchConfig.viewMoreText %><\/a><\/div>\n<% } %>\n\n<\/ul>"};</script><script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/uploads/minqueue-cache/minqueue-534b9ec6-9ae3bedb.js'></script>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-content/themes/DevCenter-master/library/js/black-nav.js'></script>
+<script type='text/javascript' src='https://xerodev-wpengine.netdna-ssl.com/wp-includes/js/wp-embed.min.js'></script>
+</body>
+</html>

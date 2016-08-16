@@ -1,0 +1,13 @@
+{
+    "name": "Xero API",
+    "package": "xeroapi",
+    "index": "index.html",
+    "externalURL": "https://developer.xero.com/documentation/",
+    "selectors": {
+        "h2": "Guide",
+        "h1.withContents": "Guide",
+        "h1.api": "Package"
+    },
+    "icon32x32": "logo-xero-blue.png",
+    "allowJS": true
+}
